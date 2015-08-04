@@ -2,9 +2,7 @@
 FROM ruby:2.2.2
 
 # Variable for images project
-ENV CUSTOMER devcrea
-ENV NAME modele
-ENV COMPOSE_PROJECT_NAME $C
+ENV NAME sharing
 
 # Maintainer container
 MAINTAINER "VAILLANT Jérémy" <vaillant.jeremy@dev-crea.com>
