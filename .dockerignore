@@ -1,0 +1,5 @@
+tmp/pids/server.pid
+.git
+.gitignore
+docker-compose.yml
+
