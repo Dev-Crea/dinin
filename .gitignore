@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore cache sass
+*.sass-cache
+
+# Ignore assets files
+public/assets/
