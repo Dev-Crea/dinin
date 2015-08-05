@@ -21,7 +21,7 @@ gem 'haml', '~> 4.0.6'
 gem 'haml-rails', '~> 0.9.0'
 
 # Configuration of website
-gem 'config'
+gem 'config', '~> 0.0.1'
 
 # Using sprites
 gem 'sprite-factory', '~> 1.6.2'
