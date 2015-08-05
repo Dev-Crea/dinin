@@ -2,4 +2,6 @@ tmp/pids/server.pid
 .git
 .gitignore
 docker-compose.yml
-
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
