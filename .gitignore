@@ -17,3 +17,8 @@
 
 # Ignore assets files
 public/assets/
+
+# Ignore files config local
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
