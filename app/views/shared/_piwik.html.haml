@@ -1,0 +1,17 @@
+/ Piwik
+:javascript
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    %title= Settings.titre_web_site
+    var u="//#{Settings.PIWIK_SERVER}/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', "#{Settings.PIWIK_ID}"]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+%noscript
+  %p
+    %img{:alt => "", :src => "//#{Settings.PIWIK_SERVER}/piwik.php?idsite=#{Settings.PIWIK_ID}", :style => "border:0;"}/
+/ End Piwik Code

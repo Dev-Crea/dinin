@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Rails framework
-gem 'rails', '4.2.2'
+gem 'rails', '4.2.3'
 
 # CSS language
 gem 'sass-rails', '~> 5.0'
@@ -21,7 +21,7 @@ gem 'haml', '~> 4.0.6'
 gem 'haml-rails', '~> 0.9.0'
 
 # Configuration of website
-gem 'config', '~> 0.0.1'
+gem 'config', '~> 1.0.beta3'
 
 # Using sprites
 gem 'sprite-factory', '~> 1.6.2'

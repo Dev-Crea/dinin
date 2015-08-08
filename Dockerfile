@@ -17,5 +17,5 @@ WORKDIR /$NAME
 # Téléchargement des dépandences
 ADD Gemfile /$NAME/Gemfile
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-RUN bundle install
+RUN bundle install --without development test doc
 ADD . /$NAME
