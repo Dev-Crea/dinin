@@ -2,7 +2,7 @@
 FROM ruby:2.2.2
 
 # Variable for images project
-ENV NAME sharing
+ENV NAME modele
 
 # Maintainer container
 MAINTAINER "VAILLANT Jérémy" <vaillant.jeremy@dev-crea.com>
