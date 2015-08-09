@@ -44,3 +44,9 @@ end
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
+
+# Gem for production
+group :production do
+  # server WEB
+  gem 'thin', '~> 1.6.3'
+end

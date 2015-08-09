@@ -9,7 +9,7 @@ web:
   build: .
   env_file:
     - ./rails-production.env
-  command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  command: bundle exec thin start -p 3000
   volumes:
     - .:/cube
   ports:
