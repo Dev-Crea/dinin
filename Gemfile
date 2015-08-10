@@ -6,6 +6,9 @@ gem 'rails', '4.2.3'
 # CSS language
 gem 'sass-rails', '~> 5.0'
 
+# CSS styles
+gem 'foundation-rails', '~> 5.5.2.1'
+
 # Javascript language
 gem 'coffee-rails', '~> 4.1.0'
 
@@ -29,6 +32,12 @@ gem 'sprite-factory', '~> 1.6.2'
 # Databases
 gem 'mongoid', '~> 4.0.2'
 gem 'bson_ext'
+
+# Translate services
+gem 'rails-i18n', '~> 4.0.4'
+
+# loading assets fast
+gem 'turbolinks', '~> 2.5.3'
 
 # Gem for development
 gem 'therubyracer', '~> 0.12.2', platforms: :ruby

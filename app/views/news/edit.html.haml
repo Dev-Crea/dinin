@@ -1,0 +1,7 @@
+%h1 Editing news
+
+= render 'form'
+
+= link_to 'Show', site_news_path(id: @news)
+\|
+= link_to 'Back', site_news_index_path

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Titre:
+  = @news.titre
+%p
+  %b Texte:
+  = @news.texte
+%p
+  %b Publication:
+  = @news.publication
+
+= link_to 'Edit', edit_site_news_path(id: @news)
+\|
+= link_to 'Back', site_news_index_path

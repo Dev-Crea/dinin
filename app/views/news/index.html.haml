@@ -1,0 +1,32 @@
+%h1
+  = link_to @site.nom, @site.domaine
+  \-
+  Listing news
+  \|
+  = link_to 'Format RSS', site_news_index_path(Site.find(params[:site_id]), format: :atom)
+
+%table
+  %thead
+    %tr
+      %th Titre
+      %th Texte
+      %th Publication
+      %th Site
+      %th
+      %th
+      %th
+
+  %tbody
+    - @news.each do |news|
+      %tr
+        %td= news.titre
+        %td= news.texte
+        %td= news.publication
+        %td= Site.find(params[:site_id]).nom
+        %td= link_to 'Show', site_news_path(id: news.id)
+        %td= link_to 'Edit', edit_site_news_path(id: news)
+        %td= link_to 'Destroy', site_news_path(id: news.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New News', new_site_news_path

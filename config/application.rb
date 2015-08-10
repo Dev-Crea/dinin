@@ -13,6 +13,7 @@ Bundler.require(*Rails.groups)
 
 module Modele
   class Application < Rails::Application
+    config.i18n.available_locales = :fr
     config.i18n.locale = :fr
     config.i18n.default_locale = :fr
     config.assets.css_compressor = :yui

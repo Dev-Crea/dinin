@@ -1,0 +1,23 @@
+= form_for [@site, @news], url: site_news_index_path do |f|
+  - if @news.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
+      %ul
+        - @news.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :titre
+    = f.text_field :titre
+  .field
+    = f.label :texte
+    = f.text_field :texte
+  .field
+    = f.label :publication
+    = f.text_field :publication
+  .field
+    = f.label :site
+    = f.collection_select :site_id, Site.all, :id, :nom
+
+  .actions
+    = f.submit 'Save'

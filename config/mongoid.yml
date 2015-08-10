@@ -1,0 +1,26 @@
+development:
+  sessions:
+    default:
+      database: DEVCREA_dinin
+      hosts:
+        - 192.168.0.250:27017
+      options:
+  options:
+production:
+  sessions:
+    default:
+      database: DEVCREA_dinin
+      hosts:
+        - database
+      options:
+    options:
+test:
+  sessions:
+    default:
+      database: modele_test
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        max_retries: 1
+        retry_interval: 0

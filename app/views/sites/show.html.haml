@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Nom:
+  = @site.nom
+
+%p
+  %b Domaine
+  = link_to @site.domaine
+
+%p
+  %b News :
+  %ul
+    - @site.news.each do |new|
+      %li
+        = new.titre
+        = new.publication
+
+= link_to 'Edit', edit_site_path(@site)
+\|
+= link_to 'Back', sites_path
