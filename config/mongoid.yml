@@ -6,6 +6,7 @@ development:
         - 192.168.0.250:27017
       options:
   options:
+    raise_not_found_error: false
 production:
   sessions:
     default:
@@ -13,7 +14,9 @@ production:
       hosts:
         - database
       options:
-    options:
+        read: primary
+        max_retries: 1
+        retry_interval: 0
 test:
   sessions:
     default:
