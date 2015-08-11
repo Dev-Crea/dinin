@@ -9,6 +9,9 @@
 %p
   %b Publication:
   = @news.publication
+%p
+  %b Site:
+  = Site.find(@news.site_id).nom
 
 = link_to 'Edit', edit_site_news_path(id: @news)
 \|

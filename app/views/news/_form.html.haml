@@ -17,7 +17,7 @@
     = f.text_field :publication
   .field
     = f.label :site
-    = f.collection_select(:site_id, Site.all, :id, :nom, {:selected => params[:site_id]}, {:disabled => "disabled", :readonly => "readonly"})
+    = f.collection_select(:site_id, Site.all, :id, :nom, {:selected => params[:site_id]}, {:readonly => "readonly"})
 
   .actions
     = f.submit 'Save'
