@@ -38,4 +38,12 @@ class Utilisateur
   ## Customize
   field :nom,     type: String
   field :prenom,  type: String
+
+  ## Relation
+  has_many :news
+
+  # Customize
+  def auteur
+    self.nom.upcase + " " + self.prenom
+  end
 end

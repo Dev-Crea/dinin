@@ -5,6 +5,9 @@ class News
   field :titre, type: String
   field :texte, type: String
   field :publication, type: Date
+  field :auteur, type: String
 
+  ## Relation
   belongs_to :site
+  belongs_to :utilisateur
 end
