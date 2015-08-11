@@ -1,0 +1,8 @@
+%h2 News du sites : #{Site.find(params[:site_id]).nom}
+
+- @news.each do |new|
+  %h3
+    = link_to new.titre, "/flux/#{params[:site_id]}/#{new.id}"
+  %p= new.texte
+  %p= new.publication
+  %p= new.auteur

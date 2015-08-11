@@ -10,8 +10,5 @@
     = csrf_meta_tags
   %body
     = render 'shared/menu'
-    - unless utilisateur_signed_in? or new_utilisateur_session_path or new_utilisateur_registration_path
-      = render 'shared/guest'
-    - else
-      = yield
+    = yield
     = render 'shared/messages'
