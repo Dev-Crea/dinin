@@ -12,6 +12,9 @@
 %p
   %b Site:
   = Site.find(@news.site_id).nom
+%p
+  %b Auteur:
+  = @news.auteur
 
 = link_to 'Edit', edit_site_news_path(id: @news)
 \|

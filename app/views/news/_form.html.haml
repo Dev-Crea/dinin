@@ -14,7 +14,7 @@
     = f.text_field :texte
   .field
     = f.label :publication
-    = f.text_field :publication
+    = f.date_field :publication, value: Date.today
   .field
     = f.label :site
     = f.collection_select :site_id, Site.all, :id, :nom, :selected => params[:site_id], readonly: "readonly"
