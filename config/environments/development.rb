@@ -12,4 +12,6 @@ Rails.application.configure do
   # Configuration for assets compress
   config.assets.css_compressor = :yui
   config.assets.js_compressor = :yui
+  # Action mailer
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

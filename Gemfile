@@ -39,6 +39,10 @@ gem 'rails-i18n', '~> 4.0.4'
 # loading assets fast
 gem 'turbolinks', '~> 2.5.3'
 
+# Auhtentification
+gem 'devise', '~> 3.5.1'
+gem 'devise-i18n', '~> 0.12.1'
+
 # Gem for development
 gem 'therubyracer', '~> 0.12.2', platforms: :ruby
 group :development, :test do
