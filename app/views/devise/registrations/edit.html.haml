@@ -23,6 +23,14 @@
     %i (we need your current password to confirm your changes)
     %br/
     = f.password_field :current_password, autocomplete: "off"
+  .field
+    = f.label :nom
+    %br/
+    = f.text_field :nom
+  .field
+    = f.label :prenom
+    %br/
+    = f.text_field :prenom
   .actions
     = f.submit "Update"
 %h3 Cancel my account
