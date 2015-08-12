@@ -1,9 +1,15 @@
 fr:
   site:
+    index:
+      h2:         "Liste des sites"
+      url:        "URL des flux RSS"
+      new:        "News"
+      add:        "Ajouter un site"
+      count:      "News (%{nombre})"
     edit:
-      h1:         "Edité le site"
+      h2:         "Edité le site"
     new:
-      h1:         "Ajouter un nouveau site"
+      h2:         "Ajouter un nouveau site"
     form:
       nom:        "Nom"
       domaine:    "Adresse du site"

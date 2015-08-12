@@ -1,0 +1,8 @@
+fr:
+  ask-delete:   "ête vous sûr ?"
+  button:
+    show:       "Aperçu"
+    edit:       "Modifier"
+    destroy:    "Détruire"
+    return:     "Retour"
+    edit:       "Modifier"

@@ -1,7 +1,11 @@
 .row
   .small-12.columns
-    %h1= t('site.new.h1')
+    %h2= t('site.new.h2')
 
 .row
   .small-12.columns
     = render 'form'
+
+.row
+  .small-12.columns.text-right
+    = link_to t('button.return'), sites_path
