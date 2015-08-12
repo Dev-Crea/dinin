@@ -4,7 +4,8 @@ class FluxController < ApplicationController
   end
 
   def news
-    @news = News.where(site_id: params[:site_id])
+    @site = Site.find(params[:site_id])
+    @news = News.where(site_id: @site)
 
     respond_to do |format|
       format.html

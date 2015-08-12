@@ -1,4 +1,4 @@
-%h2 News du sites : #{Site.find(params[:site_id]).nom}
+%h2 News du sites : #{@site.nom}
 
 - @news.each do |new|
   %h3
