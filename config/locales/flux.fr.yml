@@ -1,0 +1,7 @@
+fr:
+  flux:
+    index:
+      h2:       "Liste des flux géré par le service - %{count}"
+    new:
+    news:
+
