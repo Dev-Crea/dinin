@@ -1,17 +1,18 @@
 = form_for @site do |f|
-  - if @site.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@site.errors.count, "error")} prohibited this site from being saved:"
-      %ul
-        - @site.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.label :nom
-    = f.text_field :nom
-
-  .field
-    = f.label :domaine
-    = f.text_field :domaine
-
-  .actions
-    = f.submit 'Save'
+  .row
+    .small-12.columns
+      - if @site.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@site.errors.count, "error")} prohibited this site from being saved:"
+          %ul
+      - @site.errors.full_messages.each do |msg|
+        %li= msg
+  .row
+    .small-2.columns= f.label :nom, t("site.form.nom")
+    .small-10.columns= f.text_field :nom
+  .row
+    .small-2.columns= f.label :domaine, t("site.form.domaine")
+    .small-10.columns= f.text_field :domaine
+  .row
+    .small-12.columsn.text-right
+      = f.submit t("site.form.save")

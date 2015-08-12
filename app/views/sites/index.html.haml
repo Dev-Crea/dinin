@@ -1,29 +1,32 @@
-%h1 Listing sites
+.row
+  .small-12.columns
+    %h1 Listing sites
 
-%table
-  %thead
-    %tr
-      %th Nom
-      %th
-        = fa_icon "rss"
-        Url flux RSS
-      %th News
-      %th.text-center= fa_icon "eye"
-      %th.text-center= fa_icon "pencil"
-      %th.text-center= fa_icon "trash"
+.row
+  .small-12.columns
+    %table
+      %thead
+        %tr
+          %th Nom
+          %th
+            = fa_icon "rss"
+            Url flux RSS
+          %th News
+          %th.text-center= fa_icon "eye"
+          %th.text-center= fa_icon "pencil"
+          %th.text-center= fa_icon "trash"
+      %tbody
+        - @sites.each do |site|
+          %tr
+            %td= site.nom
+            %td= site_news_index_url(site.id, format: :atom)
+            %td
+              = link_to site_news_index_path(site.id) do
+                News (#{site.news.count})
+            %td= link_to 'Show', site
+            %td= link_to 'Edit', edit_site_path(site)
+            %td= link_to 'Destroy', site, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-  %tbody
-    - @sites.each do |site|
-      %tr
-        %td= site.nom
-        %td= site_news_index_url(site.id, format: :atom)
-        %td
-          = link_to site_news_index_path(site.id) do
-            News (#{site.news.count})
-        %td= link_to 'Show', site
-        %td= link_to 'Edit', edit_site_path(site)
-        %td= link_to 'Destroy', site, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Site', new_site_path
+.row
+  .small-12.columns.text-right
+    = link_to 'New Site', new_site_path

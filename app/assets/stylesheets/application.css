@@ -31,3 +31,7 @@
 .small {
   font-size: x-small;
 }
+
+table {
+  width: 100%;
+}

@@ -1,21 +1,27 @@
-%p#notice= notice
+.row
+  .small-12.columns
+    %p#notice= notice
 
-%p
-  %b Nom:
-  = @site.nom
+.row
+  .small-2.columns
+    %b= t('site.form.nom')
+  .small-10.columns= @site.nom
+.row
+  .small-2.columns
+    %b= t('site.form.domaine')
+  .small-10.columns= link_to @site.domaine
+.row
+  .small-2.columns
+    %b= t('site.relation.news')
+  .small-10.columns
+    %ul
+      - @site.news.each do |new|
+        %li
+          = new.titre
+          = new.publication
 
-%p
-  %b Domaine
-  = link_to @site.domaine
-
-%p
-  %b News :
-  %ul
-    - @site.news.each do |new|
-      %li
-        = new.titre
-        = new.publication
-
-= link_to 'Edit', edit_site_path(@site)
-\|
-= link_to 'Back', sites_path
+.row
+  .small-12.columns.text-right
+    = link_to 'Edit', edit_site_path(@site)
+    \|
+    = link_to 'Back', sites_path

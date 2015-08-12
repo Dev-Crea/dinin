@@ -1,0 +1,12 @@
+fr:
+  site:
+    edit:
+      h1:         "Edité le site"
+    new:
+      h1:         "Ajouter un nouveau site"
+    form:
+      nom:        "Nom"
+      domaine:    "Adresse du site"
+      save:       "Enregistrer"
+    relation:
+      news:       "Les news"
