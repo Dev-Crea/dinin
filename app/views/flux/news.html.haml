@@ -1,8 +1,7 @@
-%h2 News du sites : #{@site.nom}
-
-- @news.each do |new|
-  %h3
-    = link_to new.titre, "/flux/#{params[:site_id]}/#{new.id}"
-  %p= new.texte
-  %p= new.publication
-  %p= new.auteur
+#flux
+  .row
+    .small-12.columns
+      = render partial: 'site', locals: { leSite: @site}
+  .row
+    .small-12.columns
+      = render partial: 'new', locals: {uneNews: @news, leSite: @site}

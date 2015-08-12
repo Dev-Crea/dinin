@@ -1,0 +1,23 @@
+- unless uneNews.kind_of?(News)
+  - uneNews.each do |new|
+    %h4.row
+      .small-6.columns
+        = link_to new.titre, new_path(site_id: leSite, new_id: new.id)
+      .small-6.columns.text-right.small
+        = t 'flux.shared.publication', date: new.publication
+    .row
+      .small-12.columns
+        %blockquote
+          = new.texte
+          %cite= new.auteur
+- else
+  %h4.row
+    .small-6.columns
+      = link_to uneNews.titre, new_path(site_id: leSite, new_id: uneNews.id)
+    .small-6.columns.text-right.small
+      = t 'flux.shared.publication', date: uneNews.publication
+  .row
+    .small-12.columns
+      %blockquote
+        = uneNews.texte
+        %cite= uneNews.auteur

@@ -1,23 +1,9 @@
 #flux
   .row
     .small-12.columns
-      %h2 Liste des flux géré par le service
+      %h2= t 'flux.index.h2', count: Site.all.count
   .row
     .small-12.columns
       - @sites.each do |site|
-        %h3
-          = link_to "http://#{site.domaine}" do
-            = fa_icon "link"
-            = site.domaine
-          \|
-          = link_to news_path(site_id: site.id) do
-            = site.nom
-        - site.news.each do |new|
-          %h4.row
-            .small-6.columns= link_to new.titre, new_path(site_id: site.id, new_id: new.id)
-            .small-6.columns.text-right.small= new.publication
-          .row
-            .small-12.columns
-              %blockquote
-                = new.texte
-                %cite= new.auteur
+        = render partial: 'site', locals: { leSite: site}
+        = render partial: 'new', locals: {uneNews: site.news, leSite: site.id}

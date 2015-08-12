@@ -1,0 +1,7 @@
+%h3
+  = link_to "http://#{leSite.domaine}" do
+    = fa_icon "link"
+    = leSite.domaine
+  \|
+  = link_to news_path(site_id: leSite.id) do
+    = leSite.nom

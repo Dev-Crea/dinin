@@ -1,7 +1,10 @@
 fr:
   flux:
     index:
-      h2:       "Liste des flux géré par le service - %{count}"
+      h2:             "Liste des flux géré par le service - Nombre de site géré %{count}"
     new:
-    news:
-
+      h2:             "News du site %{site}"
+      h3:             "Afficher toutes les news"
+      auteur:         "Publié par %{auteur}"
+    shared:
+      publication:    "Publié le %{date}"
