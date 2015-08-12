@@ -71,6 +71,7 @@ class SitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def site_params
-      params.require(:site).permit(:nom, :domaine)
+      params[:ustilisateur_id] = current_utilisateur.id
+      params.require(:site).permit(:nom, :domaine, :utilisateur_id)
     end
 end

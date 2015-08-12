@@ -6,4 +6,5 @@ class Site
   field :domaine, type: String
 
   has_many :news
+  belongs_to :utilisateur
 end

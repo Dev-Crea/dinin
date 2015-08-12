@@ -41,6 +41,7 @@ class Utilisateur
 
   ## Relation
   has_many :news
+  has_many :sites
 
   # Customize
   def auteur
