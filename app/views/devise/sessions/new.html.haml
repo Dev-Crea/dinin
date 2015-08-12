@@ -1,6 +1,6 @@
 .row
   .small-12.columns
-    %h2 Log in
+    %h2= t('.sign_in', :default => "Sign in")
 .row
   .small-12.columns
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -14,7 +14,7 @@
         .row
           .small-2.columns= f.label :remember_me
           .small-5.columns= f.check_box :remember_me
-          .small-5.columns.text-right= f.submit "Log in"
+          .small-5.columns.text-right= f.submit t('.sign_in', :default => "Sign in")
 .row
   .small-12.columns.text-center
     = render "devise/shared/links"
