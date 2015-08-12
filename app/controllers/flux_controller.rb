@@ -1,5 +1,6 @@
 class FluxController < ApplicationController
   def index
+    @sites = Site.all
   end
 
   def news

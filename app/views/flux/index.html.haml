@@ -1,1 +1,13 @@
-%p index
+.row
+  .small-12.columns
+    %h2 Liste des flux géré par le service
+.row
+  .small-12.columns
+    - @sites.each do |site|
+      %h3
+        = link_to "http://#{site.domaine}" do
+          = fa_icon "link"
+          = site.nom
+      - site.news.each do |new|
+        %h4= new.titre
+        %p= new.texte
