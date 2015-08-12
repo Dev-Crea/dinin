@@ -1,0 +1,16 @@
+fr:
+  news:
+    index:
+      h2:       "Liste des news"
+      rss:      "Format RSS"
+      add:      "Ajouter une news"
+    edit:
+      h2:       "Modifier une news"
+    new:
+      h2:       "Ajouter une news"
+    form:
+      titre:    "Titre"
+      texte:    "Texte"
+      pub:      "Publication"
+      site:     "Site"
+      auteur:   "Auteur"

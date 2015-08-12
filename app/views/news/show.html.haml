@@ -1,21 +1,30 @@
-%p#notice= notice
+.row
+  .small-12.columns
+    %p#notice= notice
 
-%p
-  %b Titre:
-  = @news.titre
-%p
-  %b Texte:
-  = @news.texte
-%p
-  %b Publication:
-  = @news.publication
-%p
-  %b Site:
-  = Site.find(@news.site_id).nom
-%p
-  %b Auteur:
-  = @news.auteur
+.row
+  .small-2.columns
+    %b= t('news.form.titre')
+  .small-10.columns= @news.titre
+.row
+  .small-2.columns
+    %b= t('news.form.texte')
+  .small-10.columns= @news.texte
+.row
+  .small-2.columns
+    %b= t('news.form.pub')
+  .small-10.columns= @news.publication
+.row
+  .small-2.columns
+    %b= t('news.form.site')
+  .small-10.columns= Site.find(@news.site_id).nom
+.row
+  .small-2.columns
+    %b= t('news.form.auteur')
+  .small-10.columns= @news.auteur
 
-= link_to 'Edit', edit_site_news_path(id: @news)
-\|
-= link_to 'Back', site_news_index_path
+.row
+  .small-12.columns.text-right
+    = link_to t('button.edit'), edit_site_news_path(id: @news)
+    \|
+    = link_to t('button.return'), site_news_index_path

@@ -1,7 +1,13 @@
-%h1 Editing news
+.row
+  .small-12.columns
+    %h2= t('news.edit.h2')
 
-= render 'form'
+.row
+  .small-12.columns
+    = render 'form'
 
-= link_to 'Show', site_news_path(id: @news)
-\|
-= link_to 'Back', site_news_index_path
+.row
+  .small-12.columns.text-right
+    = link_to t('button.show'), site_news_path(id: @news)
+    \|
+    = link_to t('button.return'), site_news_index_path

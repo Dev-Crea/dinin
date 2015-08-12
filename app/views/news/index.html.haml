@@ -1,36 +1,39 @@
-%h1
-  = link_to @site.domaine do
-    = fa_icon "link"
-    = @site.nom
-  \-
-  Listing news
-  \|
-  = link_to site_news_index_path(Site.find(params[:site_id]), format: :atom) do
-    = fa_icon "rss"
-    Format RSS
+.row
+  .small-12.columns
+    %h2
+      = link_to @site.domaine do
+        = fa_icon "link"
+        = @site.nom
+      \|
+      = t('news.index.h2')
+      \|
+      = link_to site_news_index_path(Site.find(params[:site_id]), format: :atom) do
+        = fa_icon "rss"
+        = t('news.index.rss')
 
-%table
-  %thead
-    %tr
-      %th Titre
-      %th Texte
-      %th Publication
-      %th Site
-      %th.text-center= fa_icon "eye"
-      %th.text-center= fa_icon "pencil"
-      %th.text-center= fa_icon "trash"
+.row
+  .small-12.columns
+    %table
+      %thead
+        %tr
+          %th Titre
+          %th Texte
+          %th Publication
+          %th Site
+          %th.text-center= fa_icon "eye"
+          %th.text-center= fa_icon "pencil"
+          %th.text-center= fa_icon "trash"
+      %tbody
+        - @news.each do |news|
+          %tr
+            %td= news.titre
+            %td= news.texte
+            %td= news.publication
+            %td= Site.find(params[:site_id]).nom
+            %td= link_to t('button.show'), site_news_path(id: news.id)
+            %td= link_to t('button.edit'), edit_site_news_path(id: news)
+            %td= link_to t('button.destroy'), site_news_path(id: news.id), :method => :delete, :data => { :confirm => t('ask-delete') }
 
-  %tbody
-    - @news.each do |news|
-      %tr
-        %td= news.titre
-        %td= news.texte
-        %td= news.publication
-        %td= Site.find(params[:site_id]).nom
-        %td= link_to 'Show', site_news_path(id: news.id)
-        %td= link_to 'Edit', edit_site_news_path(id: news)
-        %td= link_to 'Destroy', site_news_path(id: news.id), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New News', new_site_news_path
+.row
+  .small-12.columns.text-right
+    = link_to t('news.index.add'), new_site_news_path

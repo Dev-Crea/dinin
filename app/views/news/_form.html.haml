@@ -1,26 +1,27 @@
 = form_for [@site, @news], url: site_news_index_path do |f|
-  - if @news.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
-      %ul
-        - @news.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :titre
-    = f.text_field :titre
-  .field
-    = f.label :texte
-    = f.text_field :texte
-  .field
-    = f.label :publication
-    = f.date_field :publication, value: Date.today
-  .field
-    = f.label :site
-    = f.collection_select :site_id, Site.all, :id, :nom, :selected => params[:site_id], readonly: "readonly"
-  .field
-    = f.label :auteur
-    = text_field :news, :auteur, value: current_utilisateur.auteur, :readonly => "readonly"
-
-  .actions
-    = f.submit 'Save'
+  .row
+    .small-12.columns
+      - if @news.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
+          %ul
+            - @news.errors.full_messages.each do |msg|
+              %li= msg
+  .row
+    .small-2.columns= f.label :titre, t('news.form.titre')
+    .small-10.columns= f.text_field :titre
+  .row
+    .small-2.columns= f.label :texte
+    .small-10.columns= f.text_area :texte
+  .row
+    .small-2.columns= f.label :publication
+    .small-10.columns= f.date_field :publication, value: Date.today
+  .row
+    .small-2.columns= f.label :site
+    .small-10.columns= f.collection_select :site_id, Site.all, :id, :nom, :selected => params[:site_id], readonly: "readonly"
+  .row
+    .small-2.columns= f.label :auteur
+    .small-10.columns= text_field :news, :auteur, value: current_utilisateur.auteur, :readonly => "readonly"
+  .row
+    .small-12.columsn.text-right
+      = f.submit t('button.save')
