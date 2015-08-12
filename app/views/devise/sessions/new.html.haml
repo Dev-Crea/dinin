@@ -5,16 +5,23 @@
   .small-12.columns
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .row
-        .small-2.columns= f.label :email
-        .small-10.columns= f.email_field :email, autofocus: true
+        .small-2.columns
+          = f.label :email
+        .small-10.columns
+          = f.email_field :email, autofocus: true
       .row
-        .small-2.columns= f.label :password
-        .small-10.columns= f.password_field :password, autocomplete: "off"
+        .small-2.columns
+          = f.label :password
+        .small-10.columns
+          = f.password_field :password, autocomplete: "off"
       - if devise_mapping.rememberable?
         .row
-          .small-2.columns= f.label :remember_me
-          .small-5.columns= f.check_box :remember_me
-          .small-5.columns.text-right= f.submit t('.sign_in', :default => "Sign in")
+          .small-2.columns
+            = f.label :remember_me
+          .small-5.columns
+            = f.check_box :remember_me
+          .small-5.columns.text-right
+            = f.submit t('.sign_in', :default => "Sign in")
 .row
   .small-12.columns.text-center
     = render "devise/shared/links"

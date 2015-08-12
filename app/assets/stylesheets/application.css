@@ -27,3 +27,7 @@
 .fixed-bottom .alert-box {
   margin: 0px;
 }
+
+.small {
+  font-size: x-small;
+}
