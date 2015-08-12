@@ -5,4 +5,5 @@ fr:
     new:
       h2:             "News du site %{site}"
     shared:
+      souscrire:      "S'abonner au flux %{site}"
       publication:    "Publié le %{date}"

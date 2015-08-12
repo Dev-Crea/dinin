@@ -5,3 +5,7 @@
   \|
   = link_to news_path(site_id: leSite.id) do
     = leSite.nom
+  \|
+  = link_to news_path(site_id: leSite.id, format: "atom"), class: "small" do
+    = fa_icon "rss"
+    = t('flux.shared.souscrire', site: leSite.nom)
