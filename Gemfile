@@ -42,7 +42,6 @@ gem 'turbolinks', '~> 2.5.3'
 
 # Auhtentification
 gem 'devise', '~> 3.5.1'
-
 gem 'devise-i18n', '~> 0.12.1'
 
 # Gem for development
