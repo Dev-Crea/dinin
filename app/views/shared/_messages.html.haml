@@ -1,2 +1,6 @@
-%p.notice= notice
-%p.alert= alert
+- if notice or alert
+  .fixed-bottom
+    %div{:"data-alert" => true, :class => "alert-box #{(notice) ? "success" : ""} #{(alert) ? "warning" : ""}"}
+      %p= notice
+      %p= alert
+      %a.close{:href => "#"} &times;

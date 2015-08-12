@@ -8,6 +8,7 @@ gem 'sass-rails', '~> 5.0'
 
 # CSS styles
 gem 'foundation-rails', '~> 5.5.2.1'
+gem 'font-awesome-rails', '~> 4.4.0.0'
 
 # Javascript language
 gem 'coffee-rails', '~> 4.1.0'
@@ -41,6 +42,7 @@ gem 'turbolinks', '~> 2.5.3'
 
 # Auhtentification
 gem 'devise', '~> 3.5.1'
+
 gem 'devise-i18n', '~> 0.12.1'
 
 # Gem for development

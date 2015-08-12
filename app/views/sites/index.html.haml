@@ -4,11 +4,13 @@
   %thead
     %tr
       %th Nom
-      %th Url flux RSS
+      %th
+        = fa_icon "rss"
+        Url flux RSS
       %th News
-      %th
-      %th
-      %th
+      %th.text-center= fa_icon "eye"
+      %th.text-center= fa_icon "pencil"
+      %th.text-center= fa_icon "trash"
 
   %tbody
     - @sites.each do |site|

@@ -1,9 +1,13 @@
 %h1
-  = link_to @site.nom, @site.domaine
+  = link_to @site.domaine do
+    = fa_icon "link"
+    = @site.nom
   \-
   Listing news
   \|
-  = link_to 'Format RSS', site_news_index_path(Site.find(params[:site_id]), format: :atom)
+  = link_to site_news_index_path(Site.find(params[:site_id]), format: :atom) do
+    = fa_icon "rss"
+    Format RSS
 
 %table
   %thead
@@ -12,9 +16,9 @@
       %th Texte
       %th Publication
       %th Site
-      %th
-      %th
-      %th
+      %th.text-center= fa_icon "eye"
+      %th.text-center= fa_icon "pencil"
+      %th.text-center= fa_icon "trash"
 
   %tbody
     - @news.each do |news|

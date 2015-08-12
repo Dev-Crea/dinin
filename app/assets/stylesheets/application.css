@@ -13,5 +13,17 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
+ *= require font-awesome
  */
+
+.fixed-bottom {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+  bottom: 0px;
+}
+
+.fixed-bottom .alert-box {
+  margin: 0px;
+}
