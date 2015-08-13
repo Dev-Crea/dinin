@@ -30,6 +30,7 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
+        SystemMailer.site_created(current_utilisateur.email, @site.nom, @site.id.to_str).deliver_later
         format.html { redirect_to @site, notice: 'Site was successfully created.' }
         format.json { render :show, status: :created, location: @site }
       else
