@@ -41,10 +41,13 @@ class Utilisateur
 
   ## Relation
   has_many :news
-  has_many :sites
 
   # Customize
   def auteur
-    self.nom.upcase + " " + self.prenom
+    unless self.nom.empty? or self.prenom.empty?
+      self.nom.upcase + " " + self.prenom
+    else
+      "Anonyme"
+    end
   end
 end

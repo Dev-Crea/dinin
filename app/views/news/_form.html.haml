@@ -23,5 +23,9 @@
     .small-2.columns= f.label :auteur
     .small-10.columns= text_field :news, :auteur, value: current_utilisateur.auteur, :readonly => "readonly"
   .row
+    .small-12.columns
+      - if current_utilisateur.nom.empty? or current_utilisateur.prenom.empty?
+        %p Pensez à complété votre profile
+  .row
     .small-12.columsn.text-right
       = f.submit t('button.save')
