@@ -44,10 +44,10 @@ class Utilisateur
 
   # Customize
   def auteur
-    unless self.nom.empty? or self.prenom.empty?
-      self.nom.upcase + " " + self.prenom
-    else
+    if self.nom.empty? or self.prenom.empty?
       "Anonyme"
+    else
+      self.nom.upcase + " " + self.prenom
     end
   end
 end
