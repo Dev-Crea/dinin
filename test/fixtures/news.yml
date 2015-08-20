@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  titre: 
-  texte: 
-  publication: 
+  titre: Super nouvelle
+  texte: Aprés 20 ans de dévelopment, oui c'était difficile, la 1er version de Ullia sort.
+  publication: 20/08/2015
+  auteur: VAILLANT Jérémy
 
 two:
-  titre: 
-  texte: 
-  publication: 
+  titre: Great news
+  texte: Great news ...
+  publication: 45/08/2015
+  auteur: VAILLANT Jérémy
