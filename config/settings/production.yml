@@ -1,2 +1,6 @@
+# PIWIK DATA
 piwik_id:       "1"
 piwik_server:   "piwik.d2go.fr"
+
+# APPLICATIONS DATAS
+host_name:      "dinin.ullia.info"

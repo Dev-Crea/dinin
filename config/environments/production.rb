@@ -12,7 +12,7 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
   # Default URL for email
-  config.action_mailer.default_url_options = {:host => 'dinin.media.fr'}
+  config.action_mailer.default_url_options = {:host => Settings.host_name}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'mail.gandi.net',
