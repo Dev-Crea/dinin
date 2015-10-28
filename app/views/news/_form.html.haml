@@ -19,9 +19,10 @@
   .row
     .small-2.columns= f.label :site
     .small-10.columns= f.collection_select :site_id, Site.all, :id, :nom, :selected => params[:site_id], readonly: "readonly"
-  .row
-    .small-2.columns= f.label :auteur
-    .small-10.columns= text_field :news, :auteur, value: current_utilisateur.auteur, :readonly => "readonly"
+  - unless current_utilisateur.auteur.nil?
+    .row
+      .small-2.columns= f.label :auteur
+      .small-10.columns= text_field :news, :auteur, value: current_utilisateur.auteur, :readonly => "readonly"
   .row
     .small-12.columns
       - if current_utilisateur.nom.empty? or current_utilisateur.prenom.empty?
