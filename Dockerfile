@@ -8,7 +8,7 @@ ENV NAME dinin
 MAINTAINER "VAILLANT Jérémy" <vaillant.jeremy@dev-crea.com>
 
 # MAJ system
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev ruby-bson libxml2 libxslt
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev ruby-bson libxml2-dev libxslt-dev
 
 # Prepare container
 RUN mkdir /$NAME
