@@ -62,4 +62,6 @@ end
 group :production do
   # server WEB
   gem 'thin', '~> 1.6.3'
+  gem 'nokogiri', '~> 1.6.6.2'
+  gem 'rubygems-update', '~> 2.4', '>= 2.4.8'
 end
