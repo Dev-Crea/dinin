@@ -7,8 +7,10 @@ database:
   command: mongod --smallfiles
 web:
   build: .
-  env_file:
-    - ./rails-production.env
+  environment:
+    SECRET_KEY_BASE: bundle exec rake secret
+    RACK_ENV: production
+    VIRTUAL_HOST: demo-dinin.ullia.info
   command: bundle exec rails s -p 3000
   volumes:
     - .:/dinin
