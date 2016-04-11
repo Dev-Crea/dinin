@@ -16,8 +16,6 @@ module Modele
     config.i18n.available_locales = :fr
     config.i18n.locale = :fr
     config.i18n.default_locale = :fr
-    config.assets.css_compressor = :yui
-    config.assets.js_compressor = :yui
     Mongoid.logger.level = Logger::DEBUG
     Moped.logger.level = Logger::DEBUG
   end
