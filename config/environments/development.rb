@@ -9,9 +9,6 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.digest = true
   config.assets.raise_runtime_errors = true
-  # Configuration for assets compress
-  config.assets.css_compressor = :yui
-  config.assets.js_compressor = :yui
   # Action mailer
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
