@@ -1,7 +1,7 @@
 development:
   sessions:
     default:
-      database: DEVCREA_dinin
+      database: DEVCREA_dinin_dev
       hosts:
         - database
       options:
@@ -10,7 +10,7 @@ development:
 production:
   sessions:
     default:
-      database: DEVCREA_dinin
+      database: DEVCREA_dinin_prod
       hosts:
         - database
       options:
