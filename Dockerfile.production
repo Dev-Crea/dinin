@@ -1,0 +1,25 @@
+# Ruby version
+FROM ruby:slim
+
+# Name of Project
+ENV PROJECT dinin
+
+# Maintainer container
+MAINTAINER "VAILLANT Jérémy" <vaillant.jeremy@dev-crea.com>
+
+# MAJ system
+RUN apt-get update -qq && apt-get install -y build-essential
+
+# Prepare container
+RUN mkdir /$PROJECT
+WORKDIR /$PROJECT
+
+# Téléchargement des dépandences
+ADD Gemfile /$PROJECT/Gemfile
+ADD Gemfile.lock /$PROJECT/Gemfile.lock
+
+# Execute gems install
+RUN bundle install --without development test local
+
+# Add files
+ADD . /$PROJECT
