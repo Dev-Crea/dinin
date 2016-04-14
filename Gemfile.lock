@@ -40,6 +40,7 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bower-rails (0.10.0)
     bson (3.2.6)
     bson_ext (1.5.1)
     builder (3.2.2)
@@ -213,6 +214,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bower-rails (~> 0.10.0)
   bson_ext
   byebug (~> 5.0.0)
   coffee-rails (~> 4.1.0)

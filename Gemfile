@@ -40,6 +40,8 @@ group :development, :production, :test do
   gem 'rubygems-update', '~> 2.4', '>= 2.4.8'
   # Assets
   gem 'uglifier', '~> 3.0'
+  # Bower integration for your ruby projects.
+  gem 'bower-rails', '~> 0.10.0'
 end
 
 group :development, :test do
