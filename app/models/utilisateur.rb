@@ -1,3 +1,4 @@
+# Class utilisateur to service
 class Utilisateur
   include Mongoid::Document
   # Include default devise modules. Others available are:
@@ -7,8 +8,8 @@ class Utilisateur
          :confirmable
 
   ## Database authenticatable
-  field :email,              type: String, default: ""
-  field :encrypted_password, type: String, default: ""
+  field :email,              type: String, default: ''
+  field :encrypted_password, type: String, default: ''
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -30,11 +31,6 @@ class Utilisateur
   field :confirmation_sent_at, type: Time
   field :unconfirmed_email,    type: String # Only if using reconfirmable
 
-  ## Lockable
-  # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
-  # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
-  # field :locked_at,       type: Time
-
   ## Customize
   field :nom,     type: String
   field :prenom,  type: String
@@ -44,10 +40,10 @@ class Utilisateur
 
   # Customize
   def auteur
-    if self.nom.empty? or self.prenom.empty?
-      "Anonyme"
+    if nom.empty? || prenom.empty?
+      'Anonyme'
     else
-      self.nom.upcase + " " + self.prenom
+      nom.upcase + ' ' + prenom
     end
   end
 end

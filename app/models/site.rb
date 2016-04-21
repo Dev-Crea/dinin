@@ -1,3 +1,4 @@
+# Class to model site
 class Site
   include Mongoid::Document
   include Mongoid::Timestamps

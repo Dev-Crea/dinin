@@ -1,3 +1,4 @@
+# Class to model news
 class News
   include Mongoid::Document
   include Mongoid::Timestamps

@@ -1,3 +1,4 @@
+# Flux controller
 class FluxController < ApplicationController
   def index
     @sites = Site.all

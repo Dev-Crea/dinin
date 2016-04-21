@@ -1,0 +1,5 @@
+PreCommit:
+  RuboCop:
+    enabled: true
+  HamlLint:
+    enabled: true

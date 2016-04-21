@@ -1,7 +1,7 @@
+# Site controller
 class SitesController < ApplicationController
   before_action :set_site, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_utilisateur!
-
+  before_action :authenticate_utilisateur!
 
   # GET /sites
   # GET /sites.json
@@ -30,12 +30,11 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
-        SystemMailer.site_created(current_utilisateur.email, @site.nom, @site.id.to_str).deliver_later
-        format.html { redirect_to @site, notice: 'Site was successfully created.' }
-        format.json { render :show, status: :created, location: @site }
+        SystemMailer.site_created(current_utilisateur.email,
+                                  @site.nom, @site.id.to_str).deliver_later
+        f_html format, @site, 'Site was successfully created.'
       else
         format.html { render :new }
-        format.json { render json: @site.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,7 +44,7 @@ class SitesController < ApplicationController
   def update
     respond_to do |format|
       if @site.update(site_params)
-        format.html { redirect_to @site, notice: 'Site was successfully updated.' }
+        f_html format, @site, 'Site was successfully updated.'
         format.json { render :show, status: :ok, location: @site }
       else
         format.html { render :edit }
@@ -59,19 +58,15 @@ class SitesController < ApplicationController
   def destroy
     @site.destroy
     respond_to do |format|
-      format.html { redirect_to sites_url, notice: 'Site was successfully destroyed.' }
+      f_html format, sites_url, 'Site was successfully destroyed.'
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_site
-      @site = Site.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def site_params
-      params.require(:site).permit(:nom, :domaine, :utilisateur_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_site
+    @site = Site.find(params[:id])
+  end
 end

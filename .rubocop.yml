@@ -1,0 +1,13 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'vendor/**/*'
+  TargetRubyVersion: 2.3
+Rails:
+  Enabled: true
+Rails/FrozenStringLiteralComment:
+  Enabled: false
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Lint/Eval:
+  Enabled: false

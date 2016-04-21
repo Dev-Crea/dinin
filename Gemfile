@@ -55,3 +55,10 @@ end
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
+
+group :local do
+  gem 'railroady', '~> 1.4', '>= 1.4.2'
+  gem 'overcommit', '~> 0.32.0'
+  gem 'rubocop', '~> 0.39.0'
+  gem 'haml_lint', '~> 0.17.0'
+end
