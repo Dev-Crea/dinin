@@ -1,6 +1,10 @@
-- if notice or alert
+- if notice || alert
+  :ruby
+    classes = 'alert-box'
+    classes += 'success' if notice
+    classes += 'warning' if alert
   .fixed-bottom
-    %div{:"data-alert" => true, :class => "alert-box #{(notice) ? "success" : ""} #{(alert) ? "warning" : ""}"}
+    %div{ 'data-alert': true, class: classes }
       %p= notice
       %p= alert
-      %a.close{:href => "#"} &times;
+      %a.close{ href: '#' } &times;

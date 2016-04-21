@@ -5,5 +5,5 @@
   .row
     .small-12.columns
       - @sites.each do |site|
-        = render partial: 'site', locals: { leSite: site}
-        = render partial: 'new', locals: {uneNews: site.news, leSite: site.id}
+        = render partial: 'site', locals: { leSite: site }
+        = render partial: 'new', locals: { uneNews: site.news, leSite: site.id }

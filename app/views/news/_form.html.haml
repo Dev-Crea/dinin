@@ -3,7 +3,9 @@
     .small-12.columns
       - if @news.errors.any?
         #error_explanation
-          %h2= "#{pluralize(@news.errors.count, "error")} prohibited this news from being saved:"
+          %h2
+            = pluralize(@news.errors.count, 'error')
+            prohibited this news from being saved:
           %ul
             - @news.errors.full_messages.each do |msg|
               %li= msg
@@ -15,17 +17,21 @@
     .small-10.columns= f.text_area :texte
   .row
     .small-2.columns= f.label :publication
-    .small-10.columns= f.date_field :publication, value: Date.today
+    .small-10.columns= f.date_field :publication, value: Time.zone.today
   .row
     .small-2.columns= f.label :site
-    .small-10.columns= f.collection_select :site_id, Site.all, :id, :nom, :selected => params[:site_id], readonly: "readonly"
+    .small-10.columns
+      = f.collection_select :site_id, Site.all, :id, :nom,
+        selected: params[:site_id], readonly: 'readonly'
   - unless current_utilisateur.auteur.nil?
     .row
       .small-2.columns= f.label :auteur
-      .small-10.columns= text_field :news, :auteur, value: current_utilisateur.auteur, :readonly => "readonly"
+      .small-10.columns
+        = text_field :news, :auteur, value: current_utilisateur.auteur,
+          readonly: 'readonly'
   .row
     .small-12.columns
-      - if current_utilisateur.nom.empty? or current_utilisateur.prenom.empty?
+      - if current_utilisateur.nom.empty? || current_utilisateur.prenom.empty?
         %p Pensez à complété votre profile
   .row
     .small-12.columsn.text-right
