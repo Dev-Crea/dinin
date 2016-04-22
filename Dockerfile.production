@@ -8,7 +8,13 @@ ENV PROJECT dinin
 MAINTAINER "VAILLANT Jérémy" <vaillant.jeremy@dev-crea.com>
 
 # MAJ system
-RUN apt-get update -qq && apt-get install -y build-essential
+RUN apt-get update -qq && apt-get install -y build-essential npm git node
+
+# Install bower
+RUN npm install -g bower
+
+# Configure bower
+RUN echo '{ "allow_root": true, "interactive": false }' > /root/.bowerrc
 
 # Prepare container
 RUN mkdir /$PROJECT
