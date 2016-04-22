@@ -12,7 +12,7 @@ production:
     default:
       database: DEVCREA_dinin_prod
       hosts:
-        - database
+        - devcrea-db
       options:
         read: primary
         max_retries: 1
