@@ -31,7 +31,7 @@
           readonly: 'readonly'
   .row
     .small-12.columns
-      - if current_utilisateur.nom.empty? || current_utilisateur.prenom.empty?
+      - if current_utilisateur.nom.nil? || current_utilisateur.prenom.nil?
         %p Pensez à complété votre profile
   .row
     .small-12.columsn.text-right
