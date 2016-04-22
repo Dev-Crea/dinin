@@ -69,4 +69,8 @@ class SitesController < ApplicationController
   def set_site
     @site = Site.find(params[:id])
   end
+
+  def site_params
+    params.require(:site).permit(:nom, :domaine)
+  end
 end
