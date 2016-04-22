@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
   private
 
   def f_html(format, url, text)
-    format.html { redirect_to url, notice, text }
+    format.html { redirect_to url, notice: text }
   end
 end
