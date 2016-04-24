@@ -40,7 +40,7 @@ class Utilisateur
 
   # Customize
   def auteur
-    if nom.empty? || prenom.empty?
+    if nom.nil? || prenom.nil?
       'Anonyme'
     else
       nom.upcase + ' ' + prenom
