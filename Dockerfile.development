@@ -12,7 +12,7 @@ WORKDIR /$PROJECT
 ADD Gemfile* /$PROJECT/
 
 # Execute gems install
-RUN bundle install --path /bundle --without production local --jobs 4
+RUN bundle install --without production local
 
 # Add files
 ADD . /$PROJECT

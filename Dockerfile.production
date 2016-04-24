@@ -1,28 +1,15 @@
 # Ruby version
-FROM ruby:slim
+FROM devcrea/base-rails
 
 # Name of Project
 ENV PROJECT dinin
-
-# Maintainer container
-MAINTAINER "VAILLANT Jérémy" <vaillant.jeremy@dev-crea.com>
-
-# MAJ system
-RUN apt-get update -qq && apt-get install -y build-essential npm git node
-
-# Install bower
-RUN npm install -g bower
-
-# Configure bower
-RUN echo '{ "allow_root": true, "interactive": false }' > /root/.bowerrc
 
 # Prepare container
 RUN mkdir /$PROJECT
 WORKDIR /$PROJECT
 
 # Téléchargement des dépandences
-ADD Gemfile /$PROJECT/Gemfile
-ADD Gemfile.lock /$PROJECT/Gemfile.lock
+ADD Gemfile* /$PROJECT/
 
 # Execute gems install
 RUN bundle install --without development test local
