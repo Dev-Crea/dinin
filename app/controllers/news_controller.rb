@@ -36,7 +36,8 @@ class NewsController < ApplicationController
 
     respond_to do |format|
       if @news.save
-        f_html site_news_path(id: @news), 'News was successfully created.'
+        f_html format,
+               site_news_path(id: @news), 'News was successfully created.'
         format.json { render :show, status: :created, location: @news }
       else
         format.html { render :new }
