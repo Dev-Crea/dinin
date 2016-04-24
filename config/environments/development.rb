@@ -10,5 +10,8 @@ Rails.application.configure do
   config.assets.digest = true
   config.assets.raise_runtime_errors = true
   # Action mailer
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = {
+    host: ENV['VIRTUAL_HOST'],
+    port: 3000
+  }
 end

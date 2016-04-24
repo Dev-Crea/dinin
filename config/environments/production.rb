@@ -12,15 +12,6 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
   # Default URL for email
-  config.action_mailer.default_url_options = { host: Settings.host_name }
+  config.action_mailer.default_url_options = { host: ENV['VIRTUAL_HOST'] }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'mail.gandi.net',
-    port:                 587,
-    domain:               'd2go.fr',
-    user_name:            'admin@d2go.fr',
-    password:             'D2g_e45lt5',
-    authentication:       'plain',
-    enable_starttls_auto: true
-  }
 end
