@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Gem for production
 group :development, :production, :test do
   # Rails framework
-  gem 'rails', '4.2.3'
+  gem 'rails', '4.2.6'
   # CSS language
   gem 'sass-rails', '~> 5.0'
   # CSS styles
