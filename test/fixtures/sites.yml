@@ -3,10 +3,18 @@
 # This model initially had no columns defined.  If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one:
+
+devcrea:
   nom: DevCrea
-  domaine: dev-crea.com
-two:
+  domaine: htpp://dev-crea.com
+  news:
+    - one
+    - two
+  utilisateur: david
+
+ullia:
   nom: Ullia
-  domaine: ullia.dev-crea.com
+  domaine: http://ullia.d2go.fr
+  news:
+    - two
+  utilisateur: michel
