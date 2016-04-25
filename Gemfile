@@ -46,8 +46,11 @@ end
 
 group :development, :test do
   gem 'byebug', '~> 5.0.0'
-  gem 'web-console', '~> 2.0'
   gem 'spring', '~> 1.3.6'
+end
+
+group :development do
+  gem 'web-console', '~> 2.0'
   gem 'html2haml', '~> 2.0.0'
 end
 
