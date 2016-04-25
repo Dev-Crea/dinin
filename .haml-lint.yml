@@ -1,3 +1,2 @@
 exclude:
-  - 'app/views/devise/**/*'
   - '**/*.js.haml'

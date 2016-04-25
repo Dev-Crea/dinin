@@ -1,9 +1,10 @@
 .row
   .small-12.columns
-    %h2= t('.sign_up', :default => "Sign up")
+    %h2= t('.sign_up', default: 'Sign up')
 .row
   .small-12.columns
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_for resource, as: resource_name,
+      url: registration_path(resource_name) do |f|
       .row
         .small-12.columns
           = devise_error_messages!
@@ -19,15 +20,15 @@
             .small
               (#{@minimum_password_length} characters minimum)
         .small-10.columns
-          = f.password_field :password, autocomplete: "off"
+          = f.password_field :password, autocomplete: 'off'
       .row
         .small-2.columns
           = f.label :password_confirmation
         .small-10.columns
-          = f.password_field :password_confirmation, autocomplete: "off"
+          = f.password_field :password_confirmation, autocomplete: 'off'
       .row
         .small-12.columns.text-right
           = submit_button f, t('.sign_up', default: 'Sign up')
 .row
   .small-12.columns.text-center
-    = render "devise/shared/links"
+    = render 'devise/shared/links'

@@ -1,10 +1,12 @@
-%h2= t('.forgot_your_password', :default => 'Forgot your password?')
-= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+%h2= t('.forgot_your_password', default: 'Forgot your password?')
+= form_for resource, as: resource_name, url: password_path(resource_name),
+  html: { method: :post } do |f|
   = devise_error_messages!
   .field
     = f.label :email
-    %br/
+    %br
     = f.email_field :email, autofocus: true
   .actions
-    = submit_button f, t('.send_me_reset_password_instructions', default: 'Send me reset password instructions')
-= render "devise/shared/links"
+    - de = 'Send me reset password instructions'
+    = submit_button f, t('.send_me_reset_password_instructions', default: de)
+= render 'devise/shared/links'
