@@ -21,7 +21,7 @@
           .small-5.columns
             = f.check_box :remember_me
           .small-5.columns.text-right
-            = f.submit t('.sign_in', :default => "Sign in")
+            = submit_button f, t('.sign_in', default: 'Sign in')
 .row
   .small-12.columns.text-center
     = render "devise/shared/links"

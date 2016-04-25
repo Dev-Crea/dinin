@@ -6,5 +6,6 @@
     %br/
     = f.email_field :email, autofocus: true
   .actions
-    = f.submit t('.resend_unlock_instructions', :default => "Resend unlock instructions")
+    = submit_button f,
+      t('.resend_unlock_instructions', default: 'Resend unlock instructions')
 = render "devise/shared/links"

@@ -27,7 +27,7 @@
           = f.password_field :password_confirmation, autocomplete: "off"
       .row
         .small-12.columns.text-right
-          = f.submit t('.sign_up', :default => "Sign up")
+          = submit_button f, t('.sign_up', default: 'Sign up')
 .row
   .small-12.columns.text-center
     = render "devise/shared/links"
