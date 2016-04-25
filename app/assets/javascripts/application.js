@@ -13,6 +13,7 @@
 //= require jquery/dist/jquery.min
 //= require jquery-ujs
 //= require foundation/js/foundation.min
+//= require modernizr/modernizr
 //= require turbolinks
 //= require_tree .
 
