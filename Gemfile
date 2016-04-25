@@ -61,4 +61,5 @@ group :local do
   gem 'overcommit', '~> 0.32.0'
   gem 'rubocop', '~> 0.39.0'
   gem 'haml_lint', '~> 0.17.0'
+  gem 'deadweight', '~> 0.2.2'
 end
