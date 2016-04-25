@@ -5,7 +5,7 @@ AllCops:
   TargetRubyVersion: 2.3
 Rails:
   Enabled: true
-Rails/FrozenStringLiteralComment:
+Style/FrozenStringLiteralComment:
   Enabled: false
 Rails/HasAndBelongsToMany:
   Enabled: false
