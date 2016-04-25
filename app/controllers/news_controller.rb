@@ -33,11 +33,9 @@ class NewsController < ApplicationController
   # POST /news.json
   def create
     @news = News.new(news_params)
-
     respond_to do |format|
       if @news.save
-        f_html format,
-               site_news_path(id: @news), 'News was successfully created.'
+        f_html format, site_news_path(id: @news), t('news.create.success')
         format.json { render :show, status: :created, location: @news }
       else
         format.html { render :new }
@@ -51,7 +49,7 @@ class NewsController < ApplicationController
   def update
     respond_to do |format|
       if @news.update(news_params)
-        f_html format @news, 'News was successfully updated.'
+        f_html format @news, t('news.update.success')
         format.json { render :show, status: :ok, location: @news }
       else
         format.html { render :edit }
@@ -65,7 +63,7 @@ class NewsController < ApplicationController
   def destroy
     @news.destroy
     respond_to do |format|
-      f_html format, site_news_index_url, 'News was successfully destroyed.'
+      f_html format, site_news_index_url, t('news.destroy.success')
       format.json { head :no_content }
     end
   end

@@ -14,3 +14,9 @@ fr:
       pub:      "Publication"
       site:     "Site"
       auteur:   "Auteur"
+    create:
+      success:  La news à était crée avec succées.
+    update:
+      success:  La news à bien était mis à jour.
+    destroy:
+      success:  La news à bien était supprimé.
