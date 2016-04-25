@@ -6,14 +6,8 @@ group :development, :production, :test do
   gem 'rails', '4.2.6'
   # CSS language
   gem 'sass-rails', '~> 5.0'
-  # CSS styles
-  gem 'foundation-rails', '~> 5.5.2.1'
-  gem 'font-awesome-rails', '~> 4.4.0.0'
   # Javascript language
   gem 'coffee-rails', '~> 4.1.0'
-  # Javascripts elements
-  gem 'jquery-rails', '~> 4.0.4'
-  gem 'modernizr-rails', '~> 2.7.1'
   # create JSON
   gem 'jbuilder', '~> 2.0'
   # HTML language
