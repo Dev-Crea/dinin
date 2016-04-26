@@ -1,8 +1,9 @@
-require 'test_helper'
+require 'minitest/autorun'
+require 'minitest/spec'
 
-class SitesControllerTest < ActionController::TestCase
-  setup do
-    @site = sites(:one)
+class SitesTest < MiniTest::Unit::Test
+  def setup
+    @site = Site.new(nom: 'DevCrea', domaine: 'http://dev-crea.com')
   end
 
   test 'should get index' do
