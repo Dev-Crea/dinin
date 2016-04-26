@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-# Gem for production
 group :development, :production, :test do
   # Rails framework
   gem 'rails', '4.2.6'
@@ -48,9 +47,12 @@ group :development do
   gem 'html2haml', '~> 2.0.0'
 end
 
-# Documentation
 group :doc do
   gem 'sdoc', '~> 0.4.0'
+end
+
+group :test do
+  gem 'minitest', '~> 5.8', '>= 5.8.4'
 end
 
 group :local do
