@@ -17,7 +17,5 @@ module Modele
     config.i18n.available_locales = :fr
     config.i18n.locale = :fr
     config.i18n.default_locale = :fr
-    Mongoid.logger.level = Logger::DEBUG
-    Moped.logger.level = Logger::DEBUG
   end
 end
