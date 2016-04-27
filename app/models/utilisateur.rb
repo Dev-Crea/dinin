@@ -1,14 +1,14 @@
 # Class utilisateur to service
 class Utilisateur
+  # Inclusions
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Attributes::Dynamic
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
   field :email,              type: String, default: ''
@@ -38,15 +38,14 @@ class Utilisateur
   field :nom,     type: String
   field :prenom,  type: String
 
-  ## Relation
+  ## Relations
   has_many :news
 
-  # Customize
+  # Return auteur if name and lastname is completed
   def auteur
-    if nom.nil? || prenom.nil?
-      'Anonyme'
-    else
-      nom.upcase + ' ' + prenom
-    end
+    nom.nil? || prenom.nil? ? 'Anonyme' : nom.upcase + ' ' + prenom
   end
+
+  # Validations
+  validates :email, presence: true
 end
