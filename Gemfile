@@ -41,6 +41,7 @@ group :test do
   gem 'mongoid-minitest', '~> 1.1'
   gem 'minitest-matchers', '~> 1.4', '>= 1.4.1'
   gem 'factory_girl_rails', '~> 4.7'
+  gem 'faker', '~> 1.6', '>= 1.6.3'
 end
 
 group :local do

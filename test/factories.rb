@@ -1,11 +1,10 @@
 FactoryGirl.define do
-  sequence(:email) { |n| "super-test-#{n}@d2go.fr" }
-  factory :utilisateur do
-    email
-    password 'supermotdepasse'
-    password_confirmation 'supermotdepasse'
-    confirmed_at Time.zone.today
-    nom 'Michel'
-    prenom 'lehciM'
+  factory :utilisateur do |user|
+    user.email { Faker::Internet.email }
+    user.password 'supermotdepasse'
+    user.password_confirmation 'supermotdepasse'
+    user.confirmed_at Time.zone.today
+    user.nom 'Michel'
+    user.prenom 'lehciM'
   end
 end
