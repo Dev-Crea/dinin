@@ -1,15 +1,14 @@
-require 'minitest/autorun'
-require 'minitest/spec'
-
-class SitesTest < MiniTest::Unit::Test
+class SitesControllerTest < ActionController::TestCase
   def setup
+    @request.env['devise.mapping'] = Devise.mappings[:utilisateur]
+    sign_in FactoryGirl.create(:utilisateur)
+
     @site = Site.new(nom: 'DevCrea', domaine: 'http://dev-crea.com')
   end
 
   test 'should get index' do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:sites)
+    assert_response :redirect
   end
 
   test 'should get new' do

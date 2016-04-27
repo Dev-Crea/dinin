@@ -38,6 +38,9 @@ end
 
 group :test do
   gem 'minitest', '~> 5.8', '>= 5.8.4'
+  gem 'mongoid-minitest', '~> 1.1'
+  gem 'minitest-matchers', '~> 1.4', '>= 1.4.1'
+  gem 'factory_girl_rails', '~> 4.7'
 end
 
 group :local do

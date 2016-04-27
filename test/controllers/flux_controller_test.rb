@@ -1,7 +1,7 @@
-require 'minitest/autorun'
 require 'minitest/spec'
+require 'minitest/autorun'
 
-class FluxControllerTest < MiniTest::Unit::Test
+class FluxControllerTest < MiniTest::Test
   # test 'the truth' do
   #   assert true
   # end

@@ -1,7 +1,7 @@
-require 'minitest/autorun'
 require 'minitest/spec'
+require 'minitest/autorun'
 
-class NewsTest < MiniTest::Unit::Test
+class NewsControllerTest < MiniTest::Test
   def setup
     @news = News.new
   end
