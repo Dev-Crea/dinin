@@ -3,18 +3,19 @@ class NewsControllerTest < ActionController::TestCase
     @request.env['devise.mapping'] = Devise.mappings[:utilisateur]
     sign_in FactoryGirl.create(:utilisateur)
 
-    @news = News.new(titre: 'Opening', text: 'bla bla ...',
+    @news = News.new(titre: 'Opening', texte: 'bla bla ...',
                      publication: Time.zone.today, auteur: 'Michel')
+    @sites = Sites.all.last
   end
 
   test 'should get index' do
-    get :index, site_id: 1
+    get :index, site_id: @sites
     assert_response :success
     assert_not_nil assigns(:news)
   end
 
   test 'should get new' do
-    get :new, site_id: 1
+    get :new, site_id: @sites
     assert_response :success
   end
 
@@ -22,26 +23,26 @@ class NewsControllerTest < ActionController::TestCase
     assert_difference('News.count') do
       post :create, news: {
         publication: @news.publication, texte: @news.texte,
-        titre: @news.titre }, site_id: 1, id: 1
+        titre: @news.titre }, site_id: @sites, id: @news
     end
 
     assert_redirected_to news_path(assigns(:news))
   end
 
   test 'should show news' do
-    get :show, id: @news.id, site_id: 1
+    get :show, id: @news.id, site_id: @sites.id
     assert_response :success
   end
 
   test 'should get edit' do
-    get :edit, id: @news.id, site_id: 1
+    get :edit, id: @news.id, site_id: @sites.id
     assert_response :success
   end
 
   test 'should update news' do
     patch :update, id: @news.id, news: {
       publication: @news.publication, texte: @news.texte,
-      titre: @news.titre }, site_id: 1
+      titre: @news.titre }, site_id: @sites
     assert_redirected_to news_path(assigns(:news))
   end
 
@@ -54,6 +55,6 @@ class NewsControllerTest < ActionController::TestCase
   end
 
   def teardown
-    @news.destroy
+    @news.delete
   end
 end

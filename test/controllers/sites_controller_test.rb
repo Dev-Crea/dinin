@@ -8,7 +8,7 @@ class SitesControllerTest < ActionController::TestCase
 
   test 'should get index' do
     get :index
-    assert_response :redirect
+    assert_response :success
   end
 
   test 'should get new' do
@@ -48,6 +48,6 @@ class SitesControllerTest < ActionController::TestCase
   end
 
   def teardown
-    @site.destroy
+    @site.delete
   end
 end

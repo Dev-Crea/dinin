@@ -2,6 +2,7 @@
 class News
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Attributes::Dynamic
 
   field :titre, type: String
   field :texte, type: String

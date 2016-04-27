@@ -2,6 +2,7 @@
 class Site
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Attributes::Dynamic
 
   field :nom, type: String
   field :domaine, type: String
