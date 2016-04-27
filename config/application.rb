@@ -8,6 +8,7 @@ require 'action_view/railtie'
 require 'sprockets/railtie'
 require 'rails/test_unit/railtie'
 require 'active_support/all'
+require 'i18n/backend/fallbacks'
 
 Bundler.require(*Rails.groups)
 
@@ -17,5 +18,7 @@ module Modele
     config.i18n.available_locales = :fr
     config.i18n.locale = :fr
     config.i18n.default_locale = :fr
+    I18n::Backend::Simple.send(:include, I18n::Backend::Fallbacks)
+    config.i18n.fallbacks = { 'fr' => 'en' }
   end
 end
