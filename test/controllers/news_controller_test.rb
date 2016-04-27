@@ -1,9 +1,10 @@
-require 'minitest/spec'
-require 'minitest/autorun'
-
-class NewsControllerTest < MiniTest::Test
+class NewsControllerTest < ActionController::TestCase
   def setup
-    @news = News.new
+    @request.env['devise.mapping'] = Devise.mappings[:utilisateur]
+    sign_in FactoryGirl.create(:utilisateur)
+
+    @news = News.new(titre: 'Opening', text: 'bla bla ...',
+                     publication: Time.zone.today, auteur: 'Michel')
   end
 
   test 'should get index' do
@@ -50,5 +51,9 @@ class NewsControllerTest < MiniTest::Test
     end
 
     assert_redirected_to news_index_path
+  end
+
+  def teardown
+    @news.destroy
   end
 end

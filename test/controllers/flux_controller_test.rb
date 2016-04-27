@@ -1,7 +1,4 @@
-require 'minitest/spec'
-require 'minitest/autorun'
-
-class FluxControllerTest < MiniTest::Test
+class FluxControllerTest < ActionController::TestCase
   # test 'the truth' do
   #   assert true
   # end

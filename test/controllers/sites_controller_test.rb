@@ -46,4 +46,8 @@ class SitesControllerTest < ActionController::TestCase
 
     assert_redirected_to sites_path
   end
+
+  def teardown
+    @site.destroy
+  end
 end
