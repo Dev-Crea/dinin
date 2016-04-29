@@ -52,5 +52,4 @@ group :local do
   gem 'deadweight', '~> 0.2.2'
   gem 'rubycritic', '~> 2.9'
   gem 'brakeman', '~> 3.2', '>= 3.2.1'
-  gem 'traceroute', '~> 0.5.0'
 end
