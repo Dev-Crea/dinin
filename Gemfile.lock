@@ -82,13 +82,7 @@ GEM
       activesupport (>= 3.0)
       deep_merge (~> 1.0.1)
     connection_pool (2.2.0)
-    css_parser (1.2.6)
-      addressable
-      rdoc
     daemons (1.2.3)
-    deadweight (0.2.2)
-      css_parser (~> 1.2.6)
-      nokogiri
     debug_inspector (0.0.2)
     deep_merge (1.0.1)
     descendants_tracker (0.0.4)
@@ -320,7 +314,6 @@ DEPENDENCIES
   byebug (~> 5.0.0)
   coffee-rails (~> 4.1.0)
   config (~> 1.0.beta3)
-  deadweight (~> 0.2.2)
   devise (~> 3.5.1)
   factory_girl_rails (~> 4.7)
   faker (~> 1.6, >= 1.6.3)
