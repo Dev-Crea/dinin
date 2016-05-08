@@ -9,3 +9,4 @@ README.*
 Dockerfile.*
 log/*
 public/assets/*
+vendor/assets/bower_components/*
