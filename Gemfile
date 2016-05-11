@@ -30,6 +30,8 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'html2haml', '~> 2.0.0'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+  gem 'rack-livereload', '~> 0.3.16'
 end
 
 group :doc do
