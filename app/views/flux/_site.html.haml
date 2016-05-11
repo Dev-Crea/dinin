@@ -1,11 +1,3 @@
-%h3
-  = link_to "http://#{leSite.domaine}" do
-    = fa_icon 'link'
-    = leSite.domaine
-  \|
-  = link_to news_path(site_id: leSite.id) do
-    = leSite.nom
-  \|
-  = link_to news_path(site_id: leSite.id, format: 'atom'), class: 'small' do
-    = fa_icon 'rss'
-    = t('flux.shared.souscrire', site: leSite.nom)
+.text-center.button-group.expanded
+  = button_group_link(leSite)
+  = button_group_rss(leSite)
