@@ -7,6 +7,6 @@
     = fa_icon 'user'
     Profile
 %li
-  = link_to destroy_utilisateur_session_path do
+  = link_to destroy_utilisateur_session_path, method: :delete do
     = fa_icon 'power-off'
     Deconnexion
