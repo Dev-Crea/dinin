@@ -1,13 +1,19 @@
-%nav.top-bar
-  .top-bar-left
-    %ul.menu
-      %li.menu-text
-        = link_to root_path do
-          = image_tag 'favicon.png', size: '32x32'
-          = Settings.site.name
-  .top-bar-right
-    %ul.menu
-      - if utilisateur_signed_in?
-        = render 'shared/menu/user_in'
-      - else
-        = render 'shared/menu/user_out'
+%nav
+  .title-bar{ 'data-responsive-toggle': 'topbar', 'data-hide-for': 'medium' }
+    %button.menu-icon{ type: 'button', 'data-toggle': true }
+    .title-bar-title
+      Menu
+
+  .top-bar#topbar
+    .top-bar-left
+      %ul.menu
+        %li.menu-text
+          = link_to root_path do
+            = image_tag 'favicon.png', size: '32x32'
+            = Settings.site.name
+    .top-bar-right
+      %ul.menu
+        - if utilisateur_signed_in?
+          = render 'shared/menu/user_in'
+        - else
+          = render 'shared/menu/user_out'
