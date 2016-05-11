@@ -22,12 +22,9 @@ group :development, :production, :test do
   gem 'bower-rails', '~> 0.10.0'
 end
 
-group :development, :test do
+group :development do
   gem 'byebug', '~> 5.0.0'
   gem 'spring', '~> 1.3.6'
-end
-
-group :development do
   gem 'web-console', '~> 2.0'
   gem 'html2haml', '~> 2.0.0'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false

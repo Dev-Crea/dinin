@@ -15,11 +15,11 @@ Rails.application.configure do
   Mongoid.logger.level = Logger::DEBUG
   Moped.logger.level = Logger::DEBUG
   # Configure guard-livereload with rack
-  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  config.middleware.insert_before Rack::Lock, Rack::LiveReload
   config.middleware.use(Rack::LiveReload,
                         min_delay: 1000,
                         max_delay: 10_000,
-                        live_reload_port: 35_730,
+                        live_reload_port: 35_729,
                         host: 'livereload',
                         ignore: [%r{dont/modify\.html$}]
                        )
