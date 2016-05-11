@@ -72,7 +72,7 @@ class SitesController < ApplicationController
     params.require(:site).permit(:nom, :domaine)
   end
 
-  def site_saving
+  def site_saving(format)
     SystemMailer.site_created(current_utilisateur.email, @site.nom,
                               @site.id.to_str).deliver_later
     f_html format, @site, 'Site was successfully created.'

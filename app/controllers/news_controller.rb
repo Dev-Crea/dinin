@@ -33,13 +33,12 @@ class NewsController < ApplicationController
   # POST /news.json
   def create
     @news = News.new(news_params)
+    @news.utilisateur = current_utilisateur
     respond_to do |format|
       if @news.save
-        f_html format, site_news_path(id: @news), t('news.create.success')
-        format.json { render :show, status: :created, location: @news }
+        new_saving(format)
       else
-        format.html { render :new }
-        format.json { render json: @news.errors, status: :unprocessable_entity }
+        new_saving!(format)
       end
     end
   end
@@ -78,5 +77,15 @@ class NewsController < ApplicationController
   def news_params
     params.require(:news).permit(:titre, :texte, :publication, :site_id,
                                  :auteur)
+  end
+
+  def new_saving(format)
+    f_html format, site_news_path(id: @news), t('news.create.success')
+    format.json { render :show, status: :created, location: @news }
+  end
+
+  def new_saving!(format)
+    format.html { render :new }
+    format.json { render json: @news.errors, status: :unprocessable_entity }
   end
 end
