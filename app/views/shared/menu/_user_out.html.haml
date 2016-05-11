@@ -1,0 +1,12 @@
+%li
+  = link_to flux_path do
+    = fa_icon 'sitemap'
+    Voir les flux
+%li
+  = link_to new_utilisateur_registration_path do
+    = fa_icon 'user-plus'
+    = t('devise.registrations.new.sign_up', default: 'sign_up')
+%li
+  = link_to new_utilisateur_session_path do
+    = fa_icon 'user'
+    = t('devise.sessions.new.sign_in', default: 'sign_in')
