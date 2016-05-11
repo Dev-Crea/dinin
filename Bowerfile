@@ -3,6 +3,6 @@
 
 asset 'jquery'
 asset 'jquery-ujs'
-asset 'foundation'
+asset 'foundation-sites'
 asset 'motion-ui'
 asset 'fontawesome'

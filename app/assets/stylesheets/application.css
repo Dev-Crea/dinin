@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
- *= require foundation/scss/foundation
+ *= require foundation-site/dist/foundation
  *= require fontawesome/css/font-awesome.min
  *= require_self
  */
