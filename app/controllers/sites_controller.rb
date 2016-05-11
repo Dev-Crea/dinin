@@ -26,15 +26,13 @@ class SitesController < ApplicationController
   # POST /sites
   # POST /sites.json
   def create
-    @site = Site.new(site_params)
+    @site = Site.new(site_params, utilisateur: current_utilisateur)
 
     respond_to do |format|
       if @site.save
-        SystemMailer.site_created(current_utilisateur.email,
-                                  @site.nom, @site.id.to_str).deliver_later
-        f_html format, @site, 'Site was successfully created.'
+        site_saving(format)
       else
-        format.html { render :new }
+        site_saving!(format)
       end
     end
   end
@@ -72,5 +70,15 @@ class SitesController < ApplicationController
 
   def site_params
     params.require(:site).permit(:nom, :domaine)
+  end
+
+  def site_saving
+    SystemMailer.site_created(current_utilisateur.email, @site.nom,
+                              @site.id.to_str).deliver_later
+    f_html format, @site, 'Site was successfully created.'
+  end
+
+  def site_saving!(format)
+    format.html { render :new }
   end
 end
