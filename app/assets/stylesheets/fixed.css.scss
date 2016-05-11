@@ -4,10 +4,17 @@
   width: 100%;
   text-align: center;
   bottom: 0px;
+  a {
+    color: black;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .fixed-bottom .alert-box {
-  margin: 0px;
+  padding: 15px;
 }
 
 .fixed-bottom .alert-box.success {

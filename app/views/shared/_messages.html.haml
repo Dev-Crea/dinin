@@ -5,6 +5,8 @@
     classes += 'warning' if alert
   .fixed-bottom
     %div{ 'data-alert': true, class: classes }
-      %p= notice
-      %p= alert
-      %a.close{ href: '#' } &times;
+      %p
+        = notice
+        = alert
+        %a.close{ href: '#' }
+          = fa_icon 'times'
