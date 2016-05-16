@@ -10,8 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require fix
  *= require foundation-sites/dist/foundation
  *= require fontawesome/css/font-awesome.min
  *= require_self
  *= require_tree .
+ *= stub fix
  */
