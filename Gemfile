@@ -20,6 +20,7 @@ group :development, :production, :test do
   gem 'rubygems-update', '~> 2.4', '>= 2.4.8'
   gem 'uglifier', '~> 3.0'
   gem 'bower-rails', '~> 0.10.0'
+  gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
 end
 
 group :development do
