@@ -9,7 +9,7 @@ require 'sprockets/railtie'
 require 'rails/test_unit/railtie'
 require 'active_support/all'
 require 'i18n/backend/fallbacks'
-require 'sprockets/es6'
+require 'sass/rails'
 
 Bundler.require(*Rails.groups)
 
