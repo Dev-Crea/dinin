@@ -20,8 +20,7 @@ group :development, :production, :test do
   gem 'rubygems-update', '~> 2.4', '>= 2.4.8'
   gem 'uglifier', '~> 3.0'
   gem 'bower-rails', '~> 0.10.0'
-  gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
-  gem 'sprockets', '~> 3.6'
+  gem 'foundation-rails', '~> 6.2', '>= 6.2.1.0'
 end
 
 group :development do
@@ -54,6 +53,7 @@ group :local do
   gem 'brakeman', '~> 3.2', '>= 3.2.1'
 end
 
-group :production do
-  gem 'sprockets-es6', '~> 0.9.0'
+group :asset do
+  gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
+  gem 'zurb-foundation', '~> 4.3', '>= 4.3.2'
 end
