@@ -6,12 +6,12 @@ module ApplicationHelper
   end
 
   # Closable button
-  def closable(notice, alert)
-    if notice || alert
-      content_tag :div, class: close_classes(notice, alert),
-                        'data-closable': '', id: 'message' do
+  def closable(n, a)
+    if n || a
+      test = n.nil? ? 'success' : 'alert'
+      content_tag :div, class: close_classes(test), 'data-closable': '' do
         capture do
-          concat closable_message(notice, alert)
+          concat closable_message(n, a)
           concat closable_action
         end
       end
@@ -36,9 +36,7 @@ module ApplicationHelper
     end
   end
 
-  def close_classes(notice, alert)
-    classes = 'fixed-bottom callout text-center '
-    classes << 'success' if notice
-    classes << 'alert' if alert
+  def close_classes(msg)
+    "fixed-bottom callout text-center #{msg}"
   end
 end
