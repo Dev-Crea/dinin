@@ -21,6 +21,7 @@ group :development, :production, :test do
   gem 'uglifier', '~> 3.0'
   gem 'bower-rails', '~> 0.10.0'
   gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
+  gem 'sprockets', '~> 3.6'
 end
 
 group :development do
@@ -51,4 +52,8 @@ group :local do
   gem 'haml_lint', '~> 0.17.0'
   gem 'rubycritic', '~> 2.9'
   gem 'brakeman', '~> 3.2', '>= 3.2.1'
+end
+
+group :production do
+  gem 'sprockets-es6', '~> 0.9.0'
 end
