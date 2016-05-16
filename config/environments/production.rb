@@ -5,7 +5,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
   config.serve_static_files = true
   config.assets.precompile = ['*.js', '*.css', '*.scss']
-  config.assets.compile = false
+  config.assets.compile = true
   config.assets.digest = true
   config.assets.css_compressor = :sass
   config.assets.js_compressor = :uglifier
