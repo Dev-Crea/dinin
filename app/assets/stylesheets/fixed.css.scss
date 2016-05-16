@@ -4,6 +4,7 @@
   width: 100%;
   text-align: center;
   bottom: 0px;
+  margin: 0 !important;
   a {
     color: black;
   }
@@ -19,9 +20,5 @@
 
 .fixed-bottom .alert-box.success {
   background-color: #43AC6A;
-}
-
-.fixed-bottom .alert-box.warning {
-  background-color: #f08a24;
 }
 
