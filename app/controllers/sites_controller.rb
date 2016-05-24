@@ -26,7 +26,8 @@ class SitesController < ApplicationController
   # POST /sites
   # POST /sites.json
   def create
-    @site = Site.new(site_params, utilisateur: current_utilisateur)
+    @site = Site.new(site_params)
+    @site.utilisateur = current_utilisateur
 
     respond_to do |format|
       if @site.save
