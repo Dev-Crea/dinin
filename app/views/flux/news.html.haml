@@ -4,5 +4,7 @@
       %h2= t 'flux.new.h2', site: @site.nom
   .row
     .small-12.columns
-      = render partial: 'site', locals: { leSite: @site }
+      .text-center.button-group.expanded
+        = button_group_link(@site)
+        = button_group_rss(@site)
       = render partial: 'new', locals: { uneNews: @news, leSite: @site }
