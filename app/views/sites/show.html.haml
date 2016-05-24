@@ -8,6 +8,10 @@
   .small-10.columns= link_to @site.domaine
 .row
   .small-2.columns
+    %b= t('site.form.description')
+  .small-10.columns= @site.description
+.row
+  .small-2.columns
     %b= t('site.relation.news')
   .small-10.columns
     %ul

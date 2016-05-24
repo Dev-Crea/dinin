@@ -13,5 +13,6 @@ fr:
     form:
       nom:        "Nom"
       domaine:    "Adresse du site"
+      description: "Description"
     relation:
       news:       "Les news"

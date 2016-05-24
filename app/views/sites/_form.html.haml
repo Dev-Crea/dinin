@@ -17,5 +17,8 @@
     .small-2.columns= f.label :domaine, t('site.form.domaine')
     .small-10.columns= f.text_field :domaine
   .row
+    .small-2.columns= f.label :description, t('site.form.description')
+    .small-10.columns= f.text_area :description, rows: 5
+  .row
     .small-12.columsn.text-right
       = submit_button f, t('button.save')

@@ -70,7 +70,7 @@ class SitesController < ApplicationController
   end
 
   def site_params
-    params.require(:site).permit(:nom, :domaine)
+    params.require(:site).permit(:nom, :domaine, :description)
   end
 
   def site_saving(format)
