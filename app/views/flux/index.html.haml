@@ -14,5 +14,9 @@
         = render partial: 'new',
           locals: { uneNews: site.news.last, leSite: site.id }
       .small-6.columns.callout
-        %h4= site.nom
+        %h4
+          .row
+            .small-11.columns= site.nom
+            .small-1.columns
+              %span.badge.secondary= site.news.count
         %p= site.description
