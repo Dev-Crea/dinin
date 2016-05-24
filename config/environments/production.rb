@@ -7,7 +7,7 @@ Rails.application.configure do
   config.assets.precompile = ['*.js', '*.css', '*.scss']
   config.assets.compile = true
   config.assets.digest = true
-  config.assets.css_compressor = :sass
+  # config.assets.css_compressor = :sass
   config.assets.js_compressor = :uglifier
   config.log_level = :warn
   config.i18n.fallbacks = true
