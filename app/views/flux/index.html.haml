@@ -1,9 +1,23 @@
 #flux
-  .row
-    .small-12.columns
-      %h2= t 'flux.index.h2', count: Site.all.count
-  .row
-    .small-12.columns
-      - @sites.each do |site|
-        = render partial: 'site', locals: { leSite: site }
-        = render partial: 'new', locals: { uneNews: site.news, leSite: site.id }
+  %h2.row
+    .small-10.columns
+      = t 'flux.index.h2'
+    .small-2.columns.text-right
+      %span.badge= Site.all.count
+  - @sites.each do |site|
+    .button-group.expanded
+      = button_group_link(site)
+      = button_group_rss(site)
+      = button_group_news(site)
+    .row
+      .small-6.columns
+        = render partial: 'new', locals: { uneNews: site.news.last, leSite: site.id }
+      .small-6.columns.callout
+        %h4= site.nom
+        %p= site.description
+    -#
+      .small-6.columns
+        = link_to 
+        Voire la liste des flux
+        %span.badge= site.news.count
+        =# render partial: 'new', locals: { uneNews: site.news, leSite: site.id }

@@ -8,6 +8,7 @@ class Site
   # Fields
   field :nom, type: String
   field :domaine, type: String
+  field :description, type: String, default: 'Pensez à décrire votre site.'
 
   # Relations
   has_many :news

@@ -1,9 +1,11 @@
 fr:
   flux:
     index:
-      h2:             "Liste des flux géré par le service - Nombre de site géré %{count}"
+      h2:             Flux disponibles sur le service
     new:
       h2:             "News du site %{site}"
     shared:
       souscrire:      "S'abonner au flux %{site}"
+      views_flux:     "Afficher les news %{site}"
       publication:    "Publié le %{date}"
+      link_site:      "Aller sur le site %{site}"
