@@ -5,6 +5,8 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 # Action Mailer configuration
+ActionMailer::Base.default_url_options = { host: ENV['VIRTUAL_HOST'] }
+ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   user_name: ENV['SMTP_USER'],
   password: ENV['SMTP_PASSWORD'],
