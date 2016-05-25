@@ -19,7 +19,6 @@ group :development, :production, :test do
   gem 'nokogiri', '~> 1.6.6.2'
   gem 'rubygems-update', '~> 2.4', '>= 2.4.8'
   gem 'uglifier', '~> 3.0'
-  gem 'bower-rails', '~> 0.10.0'
   gem 'foundation-rails', '~> 6.2', '>= 6.2.1.0'
   gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.0'
   gem 'sprockets', '~> 3.6'
