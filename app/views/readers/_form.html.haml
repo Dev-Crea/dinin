@@ -1,0 +1,22 @@
+= form_for @reader do |f|
+  = f.hidden_field :utilisateur_id, value: current_utilisateur.id
+  .row
+    .small-12.columns
+      - if @reader.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@reader.errors.count, 'error')
+            prohibited this reader from being saved:
+          %ul
+      - @reader.errors.full_messages.each do |msg|
+        %li= msg
+  = hidden_field_tag :_type, 'reader'
+  .row
+    .small-2.columns= f.label :domaine, t('site.form.domaine')
+    .small-10.columns= f.text_field :domaine
+  -#.row
+    .small-2.columns= f.label :tags
+    .small-10.columns= f.text_field :tags
+  .row
+    .small-12.columsn.text-right
+      = submit_button f, t('button.save')

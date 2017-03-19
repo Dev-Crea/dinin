@@ -1,0 +1,34 @@
+.row
+  .small-12.columns
+    %h2= t('site.index.h2')
+
+.row
+  .small-12.columns
+    %table
+      %thead
+        %tr
+          %th= t('site.form.nom')
+          %th
+            = fa_icon 'rss'
+            = t('site.index.url')
+          %th= t('site.index.new')
+          %th.text-center= fa_icon 'eye'
+          %th.text-center= fa_icon 'pencil'
+          %th.text-center= fa_icon 'trash'
+      %tbody
+        - @readers.each do |site|
+          %tr
+            %td= site.nom
+            %td= site_news_index_url(site.id, format: :atom)
+            %td
+              = link_to site_news_index_path(site.id) do
+                = t('site.index.count', nombre: site.news.count)
+            %td= link_to t('button.show'), site
+            %td= link_to t('button.edit'), edit_site_path(site)
+            %td
+              = link_to t('button.destroy'), site, method: :delete,
+                data: { confirm: t('ask-delete') }
+
+.row
+  .small-12.columns.text-right
+    = link_to t('site.index.add'), new_reader_path

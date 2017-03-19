@@ -10,7 +10,6 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   # Configuration mongo
   Mongoid.logger.level = Logger::DEBUG
-  Moped.logger.level = Logger::DEBUG
   # Configure guard-livereload with rack
   config.middleware.insert_before Rack::Lock, Rack::LiveReload
   config.middleware.use(Rack::LiveReload,

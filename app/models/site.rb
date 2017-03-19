@@ -5,18 +5,20 @@ class Site
   include Mongoid::Timestamps
   include Mongoid::Attributes::Dynamic
 
+  # Enumeration
+  TYPES = %w(reader writer)
+
   # Fields
-  field :nom, type: String
-  field :domaine, type: String
-  field :description, type: String, default: 'Pensez à décrire votre site.'
+  field :domaine,       type: String
+  field :nom,           type: String
+  field :description,   type: String, default: 'Pensez à décrire votre site.'
 
   # Relations
-  has_many :news
+  embeds_many :news
+  has_many :tags
   belongs_to :utilisateur
 
   # Validations
-  validates :nom, presence: true
   validates :domaine, presence: true
   validates :utilisateur, presence: true
-  validates :news, associated: true
 end

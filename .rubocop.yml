@@ -9,5 +9,3 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Rails/HasAndBelongsToMany:
   Enabled: false
-Lint/Eval:
-  Enabled: false

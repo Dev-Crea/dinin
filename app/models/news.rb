@@ -12,8 +12,8 @@ class News
   field :auteur, type: String
 
   ## Relations
-  belongs_to :site
-  belongs_to :utilisateur
+  embedded_in :site
+  #belongs_to :utilisateur
 
   ## Validations
   validates :titre, presence: true
@@ -21,5 +21,5 @@ class News
   validates :publication, presence: true
   validates :auteur, presence: true
   validates :site, presence: true
-  validates :utilisateur, presence: true
+  #validates :utilisateur, presence: true
 end

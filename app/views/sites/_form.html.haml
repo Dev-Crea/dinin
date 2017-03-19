@@ -11,11 +11,17 @@
       - @site.errors.full_messages.each do |msg|
         %li= msg
   .row
-    .small-2.columns= f.label :nom, t('site.form.nom')
-    .small-10.columns= f.text_field :nom
+    .small-2.columns= f.label :_type
+    .small-10.columns= select_tag :_type, options_for_select(Site::TYPES)
   .row
     .small-2.columns= f.label :domaine, t('site.form.domaine')
     .small-10.columns= f.text_field :domaine
+  .row
+    .small-2.columns= f.label :tags
+    .small-10.columns= f.text_field :tags
+  .row
+    .small-2.columns= f.label :nom, t('site.form.nom')
+    .small-10.columns= f.text_field :nom
   .row
     .small-2.columns= f.label :description, t('site.form.description')
     .small-10.columns= f.text_area :description, rows: 5
