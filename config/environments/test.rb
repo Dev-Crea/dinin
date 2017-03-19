@@ -13,4 +13,18 @@ Rails.application.configure do
   # Configuration mongo
   Mongoid.logger.level = Logger::DEBUG
   Moped.logger.level = Logger::DEBUG
+
+  # Configuration mailer
+  config.action_mailer.default_url_options = {
+    host: 'localhost',
+    port: 3000
+  }
+  config.action_mailer.smtp_settings = {
+    address: 'mail.gandi.net',
+    port: 587,
+    user_name: Settings.mailer.user,
+    password: Settings.mailer.password,
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 end
