@@ -8,10 +8,9 @@
       %thead
         %tr
           %th= t('site.form.nom')
-          %th
+          %th.hide-for-small-only
             = fa_icon 'rss'
             = t('site.index.url')
-          %th= t('site.index.new')
           %th.text-center= fa_icon 'eye'
           %th.text-center= fa_icon 'pencil'
           %th.text-center= fa_icon 'trash'
@@ -20,7 +19,7 @@
           - @readers.each do |site|
             %tr
               %td= site.nom
-              %td= site.domaine
+              %td.hide-for-small-only= site.domaine
               %td= link_to t('button.show'), site
               %td= link_to t('button.edit'), edit_site_path(site)
               %td
