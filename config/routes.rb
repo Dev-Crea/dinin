@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :utilisateurs
 
-  root to: 'sites#index'
+  root to: 'readers#index'
 
   resources :writers
   resources :readers

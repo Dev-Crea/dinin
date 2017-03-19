@@ -1,5 +1,6 @@
 class WritersController < ApplicationController
   before_action :set_writer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_utilisateur!
 
   # GET /writers
   # GET /writers.json
