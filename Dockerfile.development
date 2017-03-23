@@ -1,5 +1,13 @@
 # Ruby DevCrea customize
-FROM devcrea/base-rails
+FROM ruby:2.3.3-alpine
+
+MAINTAINER Jeremy VAILLANT <vaillant.jeremy@dev-crea.com>
+
+# Update system
+RUN apk update \
+  && apk upgrade \
+  && apk add --no-cache make g++ gcc libssl1.0 \
+  && rm -rf /var/cache/apk/*
 
 # Name of Project
 ENV PROJECT dinin
@@ -8,11 +16,15 @@ ENV PROJECT dinin
 RUN mkdir /$PROJECT
 WORKDIR /$PROJECT
 
-# Téléchargement des dépandences
-ADD Gemfile* /$PROJECT/
+# Download dependency
+ADD Gemfile /$PROJECT/
+RUN touch Gemfile.lock
 
 # Execute gems install
 RUN bundle install --without production local
+
+# Cleanning system
+RUN apk del make g++ gcc libssl1.0
 
 # Add files
 ADD . /$PROJECT
