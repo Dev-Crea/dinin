@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
 gem 'sass-rails', '~> 5.0'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
 gem 'haml', '~> 4.0.6'
 gem 'haml-rails', '~> 0.9.0'
@@ -13,7 +12,6 @@ gem 'bson_ext'
 gem 'rails-i18n', '~> 4.0.4'
 gem 'turbolinks', '~> 2.5.3'
 gem 'devise', '~> 3.5.1'
-gem 'therubyracer', '~> 0.12.2', platforms: :ruby
 gem 'thin', '~> 1.6.3'
 gem 'nokogiri', '~> 1.6.6.2'
 gem 'rubygems-update', '~> 2.4', '>= 2.4.8'
@@ -69,6 +67,7 @@ group :docker do
   # implicit tasks. * Flexible FileLists that act like arrays but know about manipulating
   # file names and paths. * Supports parallel execution of tasks.
   gem 'rake', '~> 10.0'
+  gem 'therubyracer', '~> 0.12.2', platforms: :ruby
 end
 
 group :local do
