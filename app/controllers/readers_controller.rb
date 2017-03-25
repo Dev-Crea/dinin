@@ -1,10 +1,12 @@
 class ReadersController < ApplicationController
   before_action :set_reader, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_utilisateur!
 
   # GET /readers
   # GET /readers.json
   def index
-    @readers = Reader.all
+    @readers = Reader.where(utilisateur_id: current_utilisateur)
+    logger.debug "Reader : #{@readers}"
   end
 
   # GET /readers/1

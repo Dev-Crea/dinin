@@ -1,11 +1,11 @@
 # Flux controller
 class FluxController < ApplicationController
   def index
-    @sites = Site.all
+    @sites = Writer.all
   end
 
   def news
-    @site = Site.find(params[:site_id])
+    @site = Writer.find(params[:site_id])
     @news = News.where(site_id: @site)
 
     respond_to do |format|

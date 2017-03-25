@@ -1,5 +1,13 @@
 # Ruby version
-FROM devcrea/base-rails
+FROM ruby:2.3-alpine
+
+MAINTAINER Jeremy VAILLANT <vaillant.jeremy@dev-crea.com>
+
+# Update system
+RUN apk update \
+  && apk upgrade \
+  && apk add --no-cache make g++ gcc libssl1.0 libxml2-dev libxslt-dev \
+  && rm -rf /var/cache/apk/*
 
 # Name of Project
 ENV PROJECT dinin
@@ -8,11 +16,20 @@ ENV PROJECT dinin
 RUN mkdir /$PROJECT
 WORKDIR /$PROJECT
 
-# Téléchargement des dépandences
-ADD Gemfile* /$PROJECT/
+# Download dependency
+ADD Gemfile /$PROJECT/
+RUN touch Gemfile.lock
+
+RUN bundle config build.nokogiri --use-system-libraries
 
 # Execute gems install
 RUN bundle install --without development test local
 
+# Cleanning system
+RUN apk del make g++ gcc libssl1.0
+
 # Add files
 ADD . /$PROJECT
+
+# Launch rails instance
+CMD bundle exec rails s -p 3000 -b '0.0.0.0'

@@ -39,7 +39,7 @@ class Utilisateur
   field :prenom,  type: String
 
   ## Relations
-  has_many :news
+  has_many :sites
 
   # Return auteur if name and lastname is completed
   def auteur

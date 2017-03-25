@@ -3,3 +3,12 @@ site:
 title_site:       Modele de projet pour Dev-Crea
 describ_site:     >
   Application faisant office d'exemple pour la création de projet Dev-Crea.
+
+host:           <%= ENV['HOST']%>
+port:           <%= ENV['PORT']%>
+
+mailer:
+  user:         <%= ENV['MAILER_USER'] %>
+  password:     <%= ENV['MAILER_PASSWORD'] %>
+  domain:       <%= ENV['MAILER_DOMAIN'] %>
+  address:      <%= ENV['MAILER_ADDRESS'] %>

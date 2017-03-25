@@ -1,28 +1,17 @@
 %p#notice= notice
 
 .row
-  .small-2.columns
-    %b= t('site.form.nom')
-  .small-10.columns= @reader.nom
-.row
-  .small-2.columns
-    %b= t('site.form.domaine')
-  .small-10.columns= link_to @reader.domaine
-.row
-  .small-2.columns
-    %b= t('site.form.description')
-  .small-10.columns= @reader.description
-.row
-  .small-2.columns
-    %b= t('site.relation.news')
-  .small-10.columns
-    %ul
-      - @reader.news.each do |new|
-        %li
-          = new.publication
-          \-
+  .small-12.columns
+    - @reader.news.each do |new|
+      .row
+        .small-12.columns
           %b= new.titre
-        %li= raw new.texte
+          \-
+          = new.publication
+        .small-12.columns
+          = raw new.texte
+        .small-12.columns
+          %hr
 
 .row
   .small-12.columns.text-right

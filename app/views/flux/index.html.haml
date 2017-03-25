@@ -3,7 +3,7 @@
     .small-10.columns
       = t 'flux.index.h2'
     .small-2.columns.text-right
-      %span.badge= Site.all.count
+      %span.badge= @sites.count
   - @sites.each do |site|
     .button-group.expanded
       = button_group_link(site)
