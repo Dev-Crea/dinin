@@ -1,3 +1,3 @@
 # Dinin
 
-> Service de creation de flux RSS ouvert et Open Source.
+> Open RSS feed creation and reading service.
