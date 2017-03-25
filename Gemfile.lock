@@ -367,8 +367,10 @@ DEPENDENCIES
   brakeman (~> 3.4)
   bson_ext
   byebug (~> 5.0.0)
+  coffee-rails (~> 4.1.0)
   config (~> 1.0.beta3)
   devise (~> 3.5.1)
+  execjs
   factory_girl_rails (~> 4.7)
   faker (~> 1.6, >= 1.6.3)
   feedjira (~> 2.1, >= 2.1.2)
