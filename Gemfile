@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.6'
+gem 'rails', '~> 4.2.7.1'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
@@ -15,7 +15,7 @@ gem 'turbolinks', '~> 2.5.3'
 gem 'devise', '~> 3.5.1'
 gem 'therubyracer', '~> 0.12.2', platforms: :ruby
 gem 'thin', '~> 1.6.3'
-gem 'nokogiri', '~> 1.6.6.2'
+gem 'nokogiri', '>= 1.6.8'
 gem 'rubygems-update', '~> 2.4', '>= 2.4.8'
 gem 'uglifier', '~> 3.0'
 gem 'foundation-rails', '~> 6.2', '>= 6.2.1.0'
