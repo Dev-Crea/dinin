@@ -6,7 +6,7 @@ MAINTAINER Jeremy VAILLANT <vaillant.jeremy@dev-crea.com>
 # Update system
 RUN apk update \
   && apk upgrade \
-  && apk add --no-cache make g++ gcc libssl1.0 \
+  && apk add --no-cache make g++ gcc libssl1.0 libxml2-dev libxslt-dev \
   && rm -rf /var/cache/apk/*
 
 # Name of Project
@@ -19,6 +19,8 @@ WORKDIR /$PROJECT
 # Download dependency
 ADD Gemfile /$PROJECT/
 RUN touch Gemfile.lock
+
+RUN bundle config build.nokogiri --use-system-libraries
 
 # Execute gems install
 RUN bundle install --without development test local
