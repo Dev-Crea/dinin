@@ -1,3 +1,13 @@
-- @news.each do |news|
-  - news.each do |new|
-    %p= new.titre
+.row
+  .shrink.columns.left{ 'data-sticky-container': 'true' }
+    %ul.menu.vertical.sticky{ 'data-sticky': 'true', 'data-anchor': '#news' }
+      - @readers.each do |new|
+        %li= link_to new.nom, "##{new.nom}"
+  .columns.right#news
+    - @news.each do |news|
+      %h6{ id: news[:title].to_s }
+        = link_to news[:domaine] do
+          = "# #{news[:title]}"
+      %hr
+      - news[:news].each do |new|
+        %p= new.titre

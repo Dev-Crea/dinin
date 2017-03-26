@@ -12,8 +12,7 @@
     = csrf_meta_tags
   %body
     = render 'shared/menu'
-    %section.row
-      .small-12.columns
-        = yield
+    %section
+      = yield
     = render 'shared/messages'
     = javascript_include_tag 'application', 'data-turbolinks-track': true

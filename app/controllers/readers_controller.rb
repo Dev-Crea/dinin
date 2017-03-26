@@ -79,9 +79,9 @@ class ReadersController < ApplicationController
   # GET /readers/unread.json
   def unread
     @news = []
-    readers = Reader.all(current_utilisateur)
-    readers.each do |news|
-      @news.push(news.news)
+    @readers = Reader.all(current_utilisateur)
+    @readers.each do |reader_news|
+      @news.push(title: reader_news.nom, news: reader_news.news)
     end
   end
 
