@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Style/Next
+
 namespace :rss do
   desc 'Search new news in feeds'
   task search: :environment do
@@ -7,13 +9,16 @@ namespace :rss do
     readers.each do |reader|
       feeds = Feedjira::Feed.fetch_and_parse(reader.domaine)
       feeds.entries.each do |entry|
-        News.create(titre: entry.title,
-                    texte: entry.content,
-                    publication: entry.published,
-                    auteur: entry.author,
-                    site: reader)
+        unless News.find_title(entry.title)
+          News.create(titre: entry.title,
+                      texte: entry.content,
+                      publication: entry.published,
+                      auteur: entry.author,
+                      site: reader)
+        end
       end
       reader.save
     end
   end
 end
+# rubocop:enable Style/Next
