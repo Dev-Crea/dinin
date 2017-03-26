@@ -5,9 +5,12 @@
         %li= link_to new.nom, "##{new.nom}"
   .columns.right#news
     - @news.each do |news|
-      %h6{ id: news[:title].to_s }
-        = link_to news[:domaine] do
-          = "# #{news[:title]}"
+      %h6= "# #{news[:title]}"
       %hr
-      - news[:news].each do |new|
-        %p= new.titre
+      %ul.accordion{ 'data-accordion': 'true', 'data-multi-expand': 'true' }
+        - news[:news].each_with_index do |new, index|
+          %li{ id: news[:title].to_s,
+               class: "accordion-item #{index.zero? ? 'is-active' : ''}",
+               'data-accordion-item': 'true' }
+            %a.accordion-title{ href: '#' }= new.titre
+            .accordion-content{ 'data-tab-content': 'true' }= raw new.texte

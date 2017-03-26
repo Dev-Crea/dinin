@@ -81,7 +81,7 @@ class ReadersController < ApplicationController
     @news = []
     @readers = Reader.all(current_utilisateur)
     @readers.each do |reader_news|
-      @news.push(title: reader_news.nom, news: reader_news.news)
+      @news.push(title: reader_news.nom, news: reader_news.news.limit(3))
     end
   end
 
