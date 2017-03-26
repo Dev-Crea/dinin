@@ -12,5 +12,7 @@
           %li{ id: news[:title].to_s,
                class: "accordion-item #{index.zero? ? 'is-active' : ''}",
                'data-accordion-item': 'true' }
-            %a.accordion-title{ href: '#' }= new.titre
+            %a.accordion-title{ href: '#' }
+              = fa_icon new.reading ? 'circle' : 'check-circle'
+              = new.titre
             .accordion-content{ 'data-tab-content': 'true' }= raw new.texte
