@@ -5,9 +5,7 @@ require_relative 'application'
 Rails.application.initialize!
 
 # Fix for action mailer
-Rails.application.routes.default_url_options = {
-  host:                   Settings.host,
-  port:                   Settings.port,
-  protocol:               Settings.protocol
-
-}
+Rails.application.routes.default_url_options[:host] = Settings.mailer.host
+Rails.application.routes.default_url_options[:port] = Settings.mailer.port
+Rails.application.routes.default_url_options[:protocol] =
+  Settings.mailer.protocol
