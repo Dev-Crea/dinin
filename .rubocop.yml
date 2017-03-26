@@ -3,10 +3,9 @@ AllCops:
     - 'bin/**/*'
     - 'vendor/**/*'
   TargetRubyVersion: 2.3
+
 Rails:
   Enabled: true
-Style/FrozenStringLiteralComment:
-  Enabled: false
 Rails/HasAndBelongsToMany:
   Enabled: false
 
