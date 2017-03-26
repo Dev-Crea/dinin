@@ -1,21 +1,19 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
-require 'rails'
-require 'active_model/railtie'
 require 'action_controller/railtie'
 require 'action_mailer/railtie'
-require 'action_view/railtie'
 require 'sprockets/railtie'
-require 'rails/test_unit/railtie'
-require 'active_support/all'
 require 'i18n/backend/fallbacks'
-require 'sass/rails'
 
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module Modele
-  # Primary class to application
   class Application < Rails::Application
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
     config.i18n.available_locales = :fr
     config.i18n.locale = :fr
     config.i18n.default_locale = :fr

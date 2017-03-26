@@ -1,9 +1,11 @@
 Rails.application.configure do
   config.cache_classes = true
   config.eager_load = false
-  config.serve_static_files   = true
-  config.static_cache_control = 'public, max-age=3600'
-  config.consider_all_requests_local       = true
+  config.public_file_server.enabled = true
+  config.public_file_server.headers = {
+    'Cache-Control' => 'public, max-age=3600'
+  }
+  config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
   config.action_dispatch.show_exceptions = false
   config.action_controller.allow_forgery_protection = false
@@ -12,19 +14,26 @@ Rails.application.configure do
   config.active_support.deprecation = :stderr
   # Configuration mongo
   Mongoid.logger.level = Logger::DEBUG
-  Moped.logger.level = Logger::DEBUG
 
   # Configuration mailer
   config.action_mailer.default_url_options = {
-    host: 'localhost',
-    port: 3000
+    host:                   Settings.host,
+    port:                   Settings.port
   }
+  config.action_mailer.default_options = {
+    host:                   Settings.host,
+    port:                   Settings.port,
+    from:                   Settings.mailer.user
+  }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'mail.gandi.net',
-    port: 587,
-    user_name: Settings.mailer.user,
-    password: Settings.mailer.password,
-    authentication: 'plain',
-    enable_starttls_auto: true
+    address:                Settings.mailer.address,
+    port:                   587,
+    user_name:              Settings.mailer.user,
+    password:               Settings.mailer.password,
+    authentication:         :plain,
+    enable_starttls_auto:   true
   }
 end

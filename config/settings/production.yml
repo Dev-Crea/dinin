@@ -1,3 +1,1 @@
-# PIWIK DATA
-piwik_id:       "1"
-piwik_server:   "piwik.d2go.fr"
+database: <%= ENV['MONGOID_DATABASE'] %>
