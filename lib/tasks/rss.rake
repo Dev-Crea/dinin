@@ -3,7 +3,8 @@
 namespace :rss do
   desc 'Search new news in feeds'
   task search: :environment do
-    Readers.all.each do |reader|
+    readers = Reader.all
+    readers.each do |reader|
       feeds = Feedjira::Feed.fetch_and_parse(reader.domaine)
       feeds.entries.each do |entry|
         News.create(titre: entry.title,
