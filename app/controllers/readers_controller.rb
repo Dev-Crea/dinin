@@ -75,6 +75,16 @@ class ReadersController < ApplicationController
     end
   end
 
+  # GET /readers/unread
+  # GET /readers/unread.json
+  def unread
+    @news = []
+    readers = Reader.all(current_utilisateur)
+    readers.each do |news|
+      @news.push(news.news)
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

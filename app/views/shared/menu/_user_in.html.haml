@@ -1,5 +1,5 @@
 %li
-  = link_to '#' do
+  = link_to unread_readers_path do
     = fa_icon 'newspaper-o'
     News
     %span.badge.warning= news_not_reading
@@ -7,14 +7,6 @@
   = link_to readers_path do
     = fa_icon 'th-list'
     Reader
-%li
-  = link_to writers_path do
-    = fa_icon 'pencil'
-    Writer
-%li
-  = link_to sites_path do
-    = fa_icon 'sitemap'
-    Sites
 %li
   = link_to edit_utilisateur_registration_path do
     = fa_icon 'user'
