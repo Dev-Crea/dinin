@@ -6,9 +6,10 @@ describ_site:     >
 
 host:           <%= ENV['HOST']%>
 port:           <%= ENV['PORT']%>
+protocol:       <%= ENV['PROTOCOL']%>
 
 mailer:
   user:         <%= ENV['MAILER_USER'] %>
   password:     <%= ENV['MAILER_PASSWORD'] %>
-  domain:       <%= ENV['MAILER_DOMAIN'] %>
+  domain:       <%= ENV['HOST'] %>
   address:      <%= ENV['MAILER_ADDRESS'] %>

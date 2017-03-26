@@ -16,15 +16,6 @@ Rails.application.configure do
   Mongoid.logger.level = Logger::DEBUG
 
   # Configuration mailer
-  config.action_mailer.default_url_options = {
-    host:                   Settings.host,
-    port:                   Settings.port
-  }
-  config.action_mailer.default_options = {
-    host:                   Settings.host,
-    port:                   Settings.port,
-    from:                   Settings.mailer.user
-  }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
