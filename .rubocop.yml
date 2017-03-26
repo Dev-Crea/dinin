@@ -9,3 +9,7 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 Rails/HasAndBelongsToMany:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*
