@@ -19,8 +19,8 @@ module ApplicationHelper
     count
   end
 
-  def button_off(path, options = {})
-    link_to path, options, class: 'buddon secondary' do
+  def button_off(path)
+    link_to path, class: 'button secondary', method: :delete do
       yield
     end
   end
