@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Class to model news
 class News
   # Inclusions
@@ -13,7 +15,6 @@ class News
 
   ## Relations
   embedded_in :site
-  #belongs_to :utilisateur
 
   ## Validations
   validates :titre, presence: true
@@ -21,5 +22,10 @@ class News
   validates :publication, presence: true
   validates :auteur, presence: true
   validates :site, presence: true
-  #validates :utilisateur, presence: true
+
+  def self.find_title(title)
+    News.fin_by(titre: title)
+  rescue
+    false
+  end
 end

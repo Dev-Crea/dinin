@@ -16,10 +16,4 @@ class Reader < Site
     end
     document.save
   end
-
-  def self.find_title(title)
-    News.fin_by(titre: title)
-  rescue
-    false
-  end
 end
