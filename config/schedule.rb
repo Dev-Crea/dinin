@@ -7,6 +7,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 2.hours do
+every 6.hours do
   rake 'rss:search'
 end
