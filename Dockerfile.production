@@ -28,5 +28,6 @@ ADD . /$PROJECT
 
 ENV RAILS_ENV production
 # RUN bundle exec rake assets:precompile
+RUN whenever --update-crontab
 
 EXPOSE 3000
