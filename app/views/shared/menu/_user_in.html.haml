@@ -1,12 +1,17 @@
 %li
+  = link_to '#' do
+    = fa_icon 'newspaper-o'
+    News
+    %span.badge.warning= news_not_reading
+%li
   = link_to readers_path do
     = fa_icon 'th-list'
     Reader
--#%li
+%li
   = link_to writers_path do
     = fa_icon 'pencil'
     Writer
--#%li
+%li
   = link_to sites_path do
     = fa_icon 'sitemap'
     Sites
@@ -15,6 +20,6 @@
     = fa_icon 'user'
     Profile
 %li
-  = link_to destroy_utilisateur_session_path, method: :delete do
+  = button_off destroy_utilisateur_session_path, method: :delete do
     = fa_icon 'power-off'
     Deconnexion

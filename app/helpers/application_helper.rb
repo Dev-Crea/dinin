@@ -1,8 +1,28 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/GuardClause
+# rubocop:disable Rails/OutputSafety
+
 # Generic helper
 module ApplicationHelper
   # Submit button
   def submit_button(resource, text)
     resource.submit text, class: 'button'
+  end
+
+  def news_not_reading
+    count = 0
+    readers = Reader.all(current_utilisateur)
+    readers.each do |reader|
+      count += reader.news.unread.count
+    end
+    count
+  end
+
+  def button_off(path, options = {})
+    link_to path, options, class: 'buddon secondary' do
+      yield
+    end
   end
 
   # Closable button
@@ -40,3 +60,5 @@ module ApplicationHelper
     "fixed-bottom callout text-center #{msg}"
   end
 end
+# rubocop:enable Style/GuardClause
+# rubocop:enable Rails/OutputSafety

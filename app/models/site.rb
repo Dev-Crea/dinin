@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Class to model site
 class Site
   # Inclusions
@@ -6,7 +8,7 @@ class Site
   include Mongoid::Attributes::Dynamic
 
   # Enumeration
-  TYPES = %w(reader writer)
+  TYPES = %w(reader writer).freeze
 
   # Fields
   field :domaine,       type: String
@@ -21,4 +23,6 @@ class Site
   # Validations
   validates :domaine, presence: true
   validates :utilisateur, presence: true
+
+  scope :all, ->(user) { where('utilisateur_id': user) }
 end
