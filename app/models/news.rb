@@ -24,7 +24,7 @@ class News
   validates :site, presence: true
 
   def self.find_title(title)
-    News.fin_by(titre: title)
+    News.find_by(titre: title)
   rescue
     false
   end

@@ -9,7 +9,7 @@ namespace :rss do
     readers.each do |reader|
       feeds = Feedjira::Feed.fetch_and_parse(reader.domaine)
       feeds.entries.each do |entry|
-        unless News.find_title(entry.title)
+        if News.find_title(entry.title)
           News.create(titre: entry.title,
                       texte: entry.content,
                       publication: entry.published,
