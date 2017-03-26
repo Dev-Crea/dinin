@@ -17,7 +17,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {
     host: Settings.host,
     protocol: Settings.protocol,
-    port: Setings.port
+    port: Settings.port
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
