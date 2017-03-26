@@ -28,3 +28,5 @@ ADD . /$PROJECT
 
 ENV RAILS_ENV production
 # RUN bundle exec rake assets:precompile
+
+EXPOSE 3000
