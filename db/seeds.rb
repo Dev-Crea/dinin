@@ -3,5 +3,5 @@ c = Utilisateur.new(email: 'demo@dev-crea.com',
                     password_confirmation: 'supermotdepasse',
                     nom: 'Michel',
                     prenom: 'Demo')
-c.confirm!
+c.confirm
 c.save
